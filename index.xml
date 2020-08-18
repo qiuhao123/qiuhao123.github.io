@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qiuhao Jin Porfolio</title>
+    <link>http://example.org/</link>
+    <description>Recent content on Qiuhao Jin Porfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Qiuhao Jin Duke 2021</copyright>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog</title>
+      <link>http://example.org/blog/</link>
+      <pubDate>Tue, 18 Aug 2020 14:30:32 -0400</pubDate>
+      
+      <guid>http://example.org/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://example.org/contact/</link>
+      <pubDate>Tue, 18 Aug 2020 14:30:25 -0400</pubDate>
+      
+      <guid>http://example.org/contact/</guid>
+      <description>Name: Qiuhao Jin
+School: Duke University</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://example.org/about/</link>
+      <pubDate>Tue, 18 Aug 2020 14:28:37 -0400</pubDate>
+      
+      <guid>http://example.org/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
