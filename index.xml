@@ -12,6 +12,19 @@
     
     
     <item>
+      <title></title>
+      <link>https://qiuhao123.github.io/personal_website_blog/</link>
+      <pubDate>Sun, 23 Aug 2020 11:57:02 -0400</pubDate>
+      
+      <guid>https://qiuhao123.github.io/personal_website_blog/</guid>
+      <description>Build a personal website with Hugo Introduction to HUGO and GitPage Hugo is one of the most popular open-source static generator and is written in GO. It is simple and easy to deploy.
+Github Pages is a static web hosting service provided by Github which provides convenient deployment directly through Github repository.
+The following intruction is suitable on Mac.
+STEP 1: Installation install Hugo
+open your terminal, run the following command:</description>
+    </item>
+    
+    <item>
       <title>Blog</title>
       <link>https://qiuhao123.github.io/blog/</link>
       <pubDate>Tue, 18 Aug 2020 14:30:32 -0400</pubDate>
