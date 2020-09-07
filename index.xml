@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Euler Project</title>
+      <link>https://qiuhao123.github.io/euler-project/</link>
+      <pubDate>Mon, 07 Sep 2020 09:12:37 -0400</pubDate>
+      
+      <guid>https://qiuhao123.github.io/euler-project/</guid>
+      <description>The euler project is a website that contains interesting problem that can be solved with mathmatical computation. In this post I will go through several examples and my deatailed answers.
+Largest Palindrome Product A palindrome number reads the same both ways. For example: 1001, 2002, 3443, 4444. And the largest palinrome can be made from the product of two 2-digit number is 9009 = 91*99. The question is to find the largest palindrome made from the product of two 3-digit numbers.</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://qiuhao123.github.io/personal_website_blog/</link>
       <pubDate>Sun, 23 Aug 2020 11:57:02 -0400</pubDate>
