@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Ad Analysis"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Ad Analysis &middot; Qiuhao Jin" />
+  	<meta property="og:site_name" content="Qiuhao Jin" />
+  	<meta property="og:url" content="https://qiuhao123.github.io/ad-analysis/" />
+    <script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+    
+        
+            <meta property="og:image" content="/images/cover.png"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-09-08T20:10:37-04:00" />
+
+    
+    
+
+    <title>Ad Analysis &middot; Qiuhao Jin</title>
+
+    
+    <meta name="description" content="Introduction Optimizing ads is one of the most intellectually challenging jobs as a data scientist can do. It is a complex problem given a huge size of the obse" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Qiuhao Jin" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <link rel="canonical" href="https://qiuhao123.github.io/ad-analysis/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://qiuhao123.github.io/images/logo.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://qiuhao123.github.io/images/logo.png",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Ad Analysis",
+    "name": "Ad Analysis",
+    "wordCount":  1031 ,
+    "timeRequired": "PT5M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://qiuhao123.github.io/ad-analysis/",
+    "datePublished": "2020-09-08T20:10Z",
+    "dateModified": "2020-09-08T20:10Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qiuhao123.github.io/ad-analysis/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened nav-current" role="presentation">
+            	<a href="/ad-analysis/">Ad Analysis</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/personal_website_blog/">Build a personal website with Hugo </a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/contact/">Contact</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/euler-project/">Euler-Project</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/introduction_to_time_series_forecasting/">Introduction to Time Series Forecasting</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav overlay clearfix">
+
+
+      
+        <a class="blog-logo" href="https://qiuhao123.github.io/"><img src="/images/logo.png" alt="Home" /></a>
+      
+      
+          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+      
+    </nav>
+
+    
+
+
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post ">
+    <header class="post-header">
+      <nav class="breadcrumb">
+        
+        
+        
+        
+        
+        <li><a href="/ad-analysis/">Ad Analysis</a></li>
+              
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </nav>
+
+
+        <h1 class="post-title">Ad Analysis</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+
+
+<h3 id="introduction">Introduction</h3>
+<p>Optimizing ads is one of the most intellectually challenging jobs as a data scientist can do. It is a complex problem given a huge size of the observations as well as number of features that can be used. The goal of this project is to take a look at several ad campaigns and analyze the performance and predict the future performance.</p>
+<h3 id="challenge-description">Challenge Description</h3>
+<p>company XYZ is a food delivery company, in order to get customers, they rely significantly on online ads, such as Google or Facebook. At the moment, they are running 40 ad campaigns and want you to help them understand their performance.</p>
+<p>There are specifically three challenges:</p>
+<ul>
+<li>If you had to identify the 5 best ad groups, which ones would they be? Which metric did you choose to identify the best ad groups? Why? Explain the pros of your metric as well as the possible cons.</li>
+<li>For each group, predict how many ads will be shown on Dec, 15 (assume each ad group keeps following its trend).</li>
+<li>Cluster ads into 3 groups: the ones whose avg_cost_per_click is going up, the ones whose avg_cost_per_click is flat and the ones whose avg_cost_per_click is going down.</li>
+</ul>
+<h3 id="data-schema">Data Schema</h3>
+<ul>
+<li>Date: all data are aggregated by date</li>
+<li>shown : the number of ads shown on a given day all over the web. Impressions are free. That is, companies pay only if a user clicks on the ad, not to show</li>
+<li>clicked : the number of clicks on the ads. This is what companies pay for. By clicking on the ad, the user is brought to the site</li>
+<li>converted : the number of conversions on the site coming from ads. To be counted, a conversion has to happen on the same day as the ad click.</li>
+<li>avg_cost_per_click : on an average, how much it cost each of those clicks</li>
+<li>total_revenue : how much revenue came from the conversions</li>
+<li>ad : we have several different ad groups. This shows which ad group we are considering</li>
+</ul>
+<h3 id="challenge1">Challenge1</h3>
+<p>since I want to identify the top 5 best ad group. There are several metrics can be used:</p>
+<ul>
+<li>average revenue per click(RPC) per group, calculated as (total revenue) / (total clicks)</li>
+<li>click through rate(CTR) per group, calculated as (how many time an ad is clicked)/ (how many time an ad is showned)</li>
+<li>cost per thousand views (CPM) per group, calculated as (total cost of an ad) / (number of impressions)* 1000</li>
+<li>revenue per 1000 ad impressions(RPM) per group, (total revenue of an ad) / (number of impressions)* 1000</li>
+</ul>
+<p><strong>CTR</strong></p>
+<ul>
+<li>pros: it measures how effective an ad is able to drive the traffic to the site.</li>
+<li>cons: it doesn&rsquo;t show any revenue. if the visitor is just visiting the site and we are not able to convert them into customer, the ads are not good.</li>
+</ul>
+<p><strong>CPM</strong></p>
+<ul>
+<li>pros: if we want to maximize the ad profit, we need to minimize the cost of each ads and it gives us a direct metrics to measure the cost of an ads</li>
+<li>cons: having low cost per impression is not necessary good if the channel has low CTR which means there are not any user engagement, we may think not to even put an ad at such channel</li>
+</ul>
+<p><strong>RPM</strong></p>
+<ul>
+<li>pros: direct measurement of revenue per impression. we want to maximize this metrics</li>
+<li>cons: did not reflect any cost issue. if a channel drives high revenue per impression but it also has high cost per impression, which means we are still not making any profit. it may not be a good ad channel that we want to use</li>
+</ul>
+<p><strong>RPC</strong></p>
+<ul>
+<li>pros: it is effective metrics to set to hit revenue based goal and it can be used to calculate cost per click</li>
+<li>cons: if you have high cost per click (cpc) it may not be a good idea, since you may loose money on this ad</li>
+</ul>
+<p>Top 5 ad groups with highest CTR</p>
+<p><img src="/images/ad_analysis_images/top_ctr.png" alt="image alt text"></p>
+<p>Top 5 ad groups with smallest CPM</p>
+<p><img src="/images/ad_analysis_images/top_cpm.png" alt="image alt text"></p>
+<p>Top 5 ad groups with largest RPM</p>
+<p><img src="/images/ad_analysis_images/top_rpm.png" alt="image alt text"></p>
+<p>Top 5 ad groups with largest RPC</p>
+<p><img src="/images/ad_analysis_images/top_rpc.png" alt="image alt text"></p>
+<h3 id="challenge-2">Challenge 2</h3>
+<p>In order to predict the number of impressions on a specific day, I first need to understand the historical  impression performance of each ad group.</p>
+<p><img src="/images/ad_analysis_images/time_impression.png" alt="image alt text"></p>
+<p>from the above image, each different ad groups has different temporal orders. Let&rsquo;s try to understand the patterns of ad_group_1.</p>
+<p><img src="/images/ad_analysis_images/ad_group_1_vs_impression.png" alt="image alt text"></p>
+<p>There are several peaks in the pattern. However, we need to further test the stationarity of ad_group_1 impressions. In addition, visualizing the mean impression over time and standard deviation over time is impreative to ensure that our time series data is not a white noise process.</p>
+<h4 id="check-stationarity">Check Stationarity</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_stationarity</span>(timeseries):
+    <span style="color:#75715e">#determine rolling statistics, make sure the time series is not white noise </span>
+    rolmean <span style="color:#f92672">=</span> timeseries<span style="color:#f92672">.</span>rolling(<span style="color:#ae81ff">3</span>)<span style="color:#f92672">.</span>mean()
+    rolstd <span style="color:#f92672">=</span> timeseries<span style="color:#f92672">.</span>rolling(<span style="color:#ae81ff">3</span>)<span style="color:#f92672">.</span>std()
+    <span style="color:#75715e">#plot rolling statistics</span>
+    fig , ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">8</span>))
+    original <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>plot(timeseries,color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;blue&#39;</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;original&#39;</span>)
+    mean <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>plot(rolmean,color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rolling_mean&#39;</span>)
+    std <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>plot(rolstd,color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;black&#39;</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rolling_std&#39;</span>)
+    ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;best&#39;</span>)
+    ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;original vs rolling_mean vs rolling_std&#39;</span>)
+    plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;original_vs_rolling_mean_vs_rolling_std&#39;</span>)
+    
+    <span style="color:#75715e">#perform dicky-fuller test:</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;perform dicky fuller test: &#34;</span>)
+    dftest <span style="color:#f92672">=</span> adfuller(timeseries,autolag<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;AIC&#39;</span>)
+    
+    dfoutput <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(dftest[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">4</span>], index<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Test Statistic&#39;</span>,<span style="color:#e6db74">&#39;p-value&#39;</span>,<span style="color:#e6db74">&#39;#Lags	Used&#39;</span>,<span style="color:#e6db74">&#39;Number of Observations Used&#39;</span>])
+    <span style="color:#66d9ef">for</span> key,value <span style="color:#f92672">in</span> dftest[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">.</span>items():
+        dfoutput[<span style="color:#e6db74">&#39;Critical Value (</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)&#39;</span><span style="color:#f92672">%</span>key] <span style="color:#f92672">=</span> value
+    <span style="color:#66d9ef">print</span>(dfoutput)
+test_stationarity(ad_group)
+</code></pre></div><p>after running the above program, I have the following visualization and test result.</p>
+<p><img src="/images/ad_analysis_images/original_vs_rolling_mean_vs_rolling_std.png" alt="image alt text"></p>
+<p>from the plot, I am able to notice</p>
+<ul>
+<li>the mean impression over time is not 0</li>
+<li>the standard deviation over time is relatively constant</li>
+<li>the correlation among different time is not 0</li>
+</ul>
+<p><img src="/images/ad_analysis_images/ad_group_1_dicky_fuller_test" alt="image alt text"></p>
+<p>The Augmented-Dicky-Fuller test is a type of statistical test called a unit root test. The intuition behind a unit root test is that it determines how strongly a time series is defined by a trend. There are several unit roots tests. Augemented-Dicky-Fuller test is a more widely used test. It uses an autoregressive model and optimizes an information criterion across multiple different lag values.</p>
+<ul>
+<li>Null Hypothesis: time series has a unit root, time series is non-stationary</li>
+<li>Alternative Hypothesis: time series doesn&rsquo;t have a unit root, time series is stationary.</li>
+</ul>
+<p>We interpret the result using p-value from the test. A p-value below the threshold(0.05 in this case) suggest we reject the null hypothesis, otherwise we fail to reject the null hypothesis.</p>
+<ul>
+<li>My test result shows that the p-value is less than 0.05, i can reject the null hypothesis, conclude that the time series data is stationary</li>
+</ul>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+    </figure>
+    
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://qiuhao123.github.io/">Qiuhao Jin</a></h4>
+  
+  <p>Read <a href="https://qiuhao123.github.io/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Durham, NC, USA</span>
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this page</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Ad%20Analysis&nbsp;-&nbsp;Qiuhao%20Jin&amp;url=https%3a%2f%2fqiuhao123.github.io%2fad-analysis%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiuhao123.github.io%2fad-analysis%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fqiuhao123.github.io%2fad-analysis%2f&amp;description=Ad%20Analysis"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fqiuhao123.github.io%2fad-analysis%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+<aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/introduction_to_time_series_forecasting/">
+          <section class="post">
+              <h2>Introduction to Time Series Forecasting</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/euler-project/">
+          <section class="post">
+              <h2>Euler-Project</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Qiuhao Jin</a> © Qiuhao Jin Duke 2021</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

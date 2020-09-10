@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Introduction to Time Series Forecasting"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Introduction to Time Series Forecasting &middot; Qiuhao Jin" />
+  	<meta property="og:site_name" content="Qiuhao Jin" />
+  	<meta property="og:url" content="https://qiuhao123.github.io/introduction_to_time_series_forecasting/" />
+    <script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+    
+        
+            <meta property="og:image" content="/images/cover.png"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-09-09T15:20:50-04:00" />
+
+    
+    
+
+    <title>Introduction to Time Series Forecasting &middot; Qiuhao Jin</title>
+
+    
+    <meta name="description" content="why forecast?
+Becasue, forecasting a time series has tremendous value. In the ad analysis project, predicting the number of impression for different ads can dri" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Qiuhao Jin" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <link rel="canonical" href="https://qiuhao123.github.io/introduction_to_time_series_forecasting/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://qiuhao123.github.io/images/logo.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://qiuhao123.github.io/images/logo.png",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Introduction to Time Series Forecasting",
+    "name": "Introduction to Time Series Forecasting",
+    "wordCount":  1642 ,
+    "timeRequired": "PT8M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://qiuhao123.github.io/introduction_to_time_series_forecasting/",
+    "datePublished": "2020-09-09T15:20Z",
+    "dateModified": "2020-09-09T15:20Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qiuhao123.github.io/introduction_to_time_series_forecasting/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/ad-analysis/">Ad Analysis</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/personal_website_blog/">Build a personal website with Hugo </a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/contact/">Contact</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/euler-project/">Euler-Project</a>
+            </li>
+        
+            
+            <li class="nav-opened nav-current" role="presentation">
+            	<a href="/introduction_to_time_series_forecasting/">Introduction to Time Series Forecasting</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav overlay clearfix">
+
+
+      
+        <a class="blog-logo" href="https://qiuhao123.github.io/"><img src="/images/logo.png" alt="Home" /></a>
+      
+      
+          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+      
+    </nav>
+
+    
+
+
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post ">
+    <header class="post-header">
+      <nav class="breadcrumb">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li><a href="/introduction_to_time_series_forecasting/">Introduction to Time Series Forecasting</a></li>
+              
+        
+        
+        
+      </nav>
+
+
+        <h1 class="post-title">Introduction to Time Series Forecasting</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+
+
+<p>why forecast?</p>
+<p>Becasue, forecasting a time series has tremendous value. In the ad analysis project, predicting the number of impression for different ads can drive a company&rsquo;s decision on how to spend their money on ads.</p>
+<p>Forecasting can be divided into two parts:</p>
+<ul>
+<li>Univeriate Time Series Forecasting: if you only use the previous value of a time series to predict the future value</li>
+<li>multivariate Time Series Forecasting: if you use external variables to forecast the future value.</li>
+</ul>
+<h4 id="1-introdiction-to-arima-model">1. Introdiction to ARIMA model</h4>
+<p>In this blog, I will particularly focus on <strong>ARIMA</strong> modeling which stands for &ldquo;Auto Regressive Integrated Moving Average&rdquo;, it is a univariate time series forecasting algorithm that can be used to predict the future value.</p>
+<p>An ARIMA model can be characterized by three terms: p, d, q where</p>
+<p>p is the order of AR term</p>
+<p>q is the order of MA term</p>
+<p>d is the number of the differencing that can make the time series stationary.</p>
+<p>How to build ARIMA model?</p>
+<ol>
+<li>make the time series staionary</li>
+<li>determine the optimal p,d,q term</li>
+<li>Forecast the residual and take it back to original scale</li>
+<li>evaluete the final model</li>
+</ol>
+<h4 id="2-why-stationary">2. why stationary?</h4>
+<p>because ARIMA model is a specialized Linear Rgression model that uses its own lags as predictors. One of the requirement for linear regression is to ensure that their predictor is independent.</p>
+<p>how to make stationary</p>
+<ul>
+<li>exponential smoothing</li>
+<li>differencing</li>
+<li>decomposing</li>
+</ul>
+<h4 id="3-what-are-ar-and-ma-models">3. What are AR and MA models</h4>
+<p>AR stands for autoregressive model which means the target variable only depends on its preivous lagged value. It can be expressed as following equation (error is irreducible)</p>
+<p>$Y_t = \alpha + \beta_1*Y_{t-1} + \beta_2*Y_{t-2} + &hellip;.. +error $</p>
+<p>MA stands for moving average model which means taht the target variable depends on a lagged forecast error . it can be expressed as following equation ($\epsilon_t$ is irreducible)</p>
+<p>$Y_t = \mu + \phi_1 * \epsilon_{t-1} + \phi_2 * \epsilon_{t-2} + &hellip;. + \epsilon_t$</p>
+<p>ARIMA model is a combination of AR and MA terms. It can be expressed as the following equation:</p>
+<p>$Y_t = \alpha + \beta_1*Y_{t-1} + \beta_2*Y_{t-2} +\beta_3 * \epsilon_{t-1} + \beta_4* \epsilon_{t-2} + &hellip;..  $</p>
+<h4 id="4-how-to-determine-the-p-term">4. how to determine the p term</h4>
+<p>the p term can be identified by inspecting the PACF(partial autocorrelation) plot</p>
+<p>what is PACF plot ?</p>
+<p>looking at the AR term, the partial autocorrealtion are the correlation between the series and its lagged value. After excluding the contribution from the intermediate value. The PACF express the direct correlation between value and lags.</p>
+<p>Determine the p term based on PACF plot:</p>
+<p><img src="/images/intro_arima/pacf.png" alt="image alter text"></p>
+<p>The shaded area within the graph is considered as confidence interval suggest that the correlation values outside of this band are likely a correaltion and not a statistical fluke. From the above plot, we can observe that lag 1 is quite significant since it is well above the confidence interval band. lag 2 is significant as well. However, I am going to be conservative and choose the p term to be 1.</p>
+<h4 id="5-how-to-determine-the-q-term">5. How to determine the q term</h4>
+<p>the q term can be identified by inspecting the ACF (Autocorrelation) plot.</p>
+<p>what is ACF plot?</p>
+<p>The ACF plot tells how many MA terms are required to remove any autocorrelation in the stationary series.</p>
+<p>Determine the q term based on ACF plot:</p>
+<p><img src="/images/intro_arima/acf.png" alt="image alter text"></p>
+<p>The inspection process are similar to the inspection process for PACF plot. The above plot shows that lag 1 and lag 2 are significant. I am going to be conservative and choose the q term to be 1.</p>
+<h4 id="6-how-to-determine-the-d-term">6. How to determine the d term</h4>
+<p>the objective of differencing is to make the time series stationary. It is also important to not over difference the time series. if you can&rsquo;t decide between two order of differecing, then go with the order that gives less standard deviation</p>
+<p>determine the d term based on ndiff from arima.utils</p>
+<pre><code>from pmdarima.arima.utils import ndiffs
+df = pd.read_csv('file_name')
+y = df.values
+ndiffs(y, test='adf')
+</code></pre><p>the program above will perform a test of stationarity for different level of d to estimate the number of difference required to make a given time series stationary. it will select the maximum value of d term for which the time series is judged stationary by the statistical test.</p>
+<h4 id="7-how-to-build-arma-model">7. How to build ARMA model</h4>
+<p>Now lets use the ARIMA mdoel from statsmodels package. Since the dataset that I use is stationary. I will build ARMA model here. The process is similar.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> ARIMA(ad_group[<span style="color:#e6db74">&#39;shown&#39;</span>],order<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>))
+final_ARMA <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(disp<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+<span style="color:#66d9ef">print</span>(final_ARMA<span style="color:#f92672">.</span>summary())
+</code></pre></div><p><img src="/images/intro_arima/arma_result.png" alt="image alter text"></p>
+<p>The model summary reveals a lot of imformation. the coefficients are the weights for each lagged term and the p &gt;|z| are the p-value for the coefficients. it should ideally less then 0.05 for the input variable to be significant.</p>
+<p>It is also important to plot the residual to ensure that there is not pattern (look for constant mean and variance)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>))
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(ad_group)
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(final_ARMA<span style="color:#f92672">.</span>fittedvalues, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>)
+residuals <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(final_ARMA<span style="color:#f92672">.</span>resid)
+residuals<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kde&#39;</span>,ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">1</span>])
+</code></pre></div><p><img src="/images/intro_arima/residual_plot.png" alt="image alter text"></p>
+<p>The residual errors appears to have 0 mean and constant variance. Let&rsquo;s plot true Xagainst the fitted values.</p>
+<p><img src="/images/intro_arima/true_vs_fitted.png" alt="image alter text"></p>
+<p>The result looks decent. However, we can still do it better by perform grid. search for our model.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">grid_search_arima</span>(data):
+    mat_aic <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>))
+    <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>):
+        <span style="color:#66d9ef">for</span> q <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>):
+            <span style="color:#66d9ef">try</span>:
+                <span style="color:#75715e">#build model for each p,q</span>
+                model <span style="color:#f92672">=</span> ARIMA(data,order<span style="color:#f92672">=</span>(p,<span style="color:#ae81ff">0</span>,q))
+                results_ARMA <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(disp<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+                <span style="color:#75715e">#fill mat_aic with corresponding p,q</span>
+                mat_aic[p<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][q<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> results_ARMA<span style="color:#f92672">.</span>aic
+            <span style="color:#66d9ef">except</span>:
+                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;not invertible&#39;</span>)
+    <span style="color:#75715e">#print(mat_aic)</span>
+    min_i, min_j <span style="color:#f92672">=</span> None, None
+    min_aic <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+    <span style="color:#75715e">#find the index of minimum aic score in mat_aic</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(mat_aic<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]):
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(mat_aic<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]):
+            <span style="color:#66d9ef">if</span> mat_aic[i][j] <span style="color:#f92672">&lt;</span> min_aic <span style="color:#f92672">and</span> mat_aic[i][j] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+                min_aic <span style="color:#f92672">=</span> mat_aic[i][j]
+                min_i, min_j <span style="color:#f92672">=</span> i,j
+    <span style="color:#66d9ef">return</span> min_i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, min_j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p>The metrics that we use to evaluate ARMA model is AIC score. AIC (Akaike information crieterion) score is an estimator of out-of-sample prediction error and a relative quality of statistical model for a given set of data. It is a relative score and it is only useful when comparing with other model&rsquo;s AIC score.</p>
+<p>AIC works by evaluating the models&rsquo; fit on the training data and adding a penalty term for the complexity of the model. The desired result is to find the lowest possible AIC which indicates the best balance of model fit with generalizability.</p>
+<p>AIC uses the model&rsquo;s maximum likelihood estimation as a measure of fit. The model that gives the maximum likelihood of the observed data is the best &lsquo;fit&rsquo; data. AIC is low when the likelihood are high. There are also assumptions to use AIC score:</p>
+<ul>
+<li>using the same dataset between model</li>
+<li>measure the same outcome variable between model</li>
+</ul>
+<h4 id="8-how-to-evalute-arima-model-with-walk-forward-validation">8. How to evalute ARIMA model with walk forward validation</h4>
+<p>In general machine learning, we would like to use cross validation for our machine learning model. However, the issue with cross validation is that when we are partitioning the training data into each fold, we are randomly select samples which means that we have dirupt the temporal order of the dataset. the test dataset may not contain the latest data. The information leakage is a problem that we need to solve.</p>
+<p>Walk forward validation requires multiple models to be trained and evaluated. It helps to preserve the temporal order of the dataset. we have to make two decision:</p>
+<ul>
+<li>Minimum number of observation. First, we must select the minimum number of observations required to train the model.</li>
+<li>Sliding or expanding window: we need to decide how many new data are we going to include each time we are going to retrain the model.</li>
+</ul>
+<ol>
+<li>start at the begnning of the time series, the minimum number of observation is used to train a model.</li>
+<li>the model makes prediction for the next time step</li>
+<li>the prediction is stored and evaluate against the known value.</li>
+<li>the window is expanded to include the known value and retrain the new model (repeat step 1)</li>
+</ol>
+<p>In the scikit-learn package, there is a TimeSeriesSplit object which can help us illustrate this validation</p>
+<p>The total number of training and testing observations are calculated at each iteration i:</p>
+<p>​								training_size = i * n_samples // (n_splits + 1) + n_samples % (n_splits + 1)</p>
+<p>​								test_size = n_samples//(n_splits + 1)</p>
+<p>where n_samples is the total number of observations And n_splits is the total number of splits. The dataset has 174 observations and I decide to create 4 splits, using the algorithm above, we can expected the following train and test set to be created:</p>
+<ul>
+<li>Split1: 38 train, 34 test</li>
+<li>Split2: 72 train, 34 test</li>
+<li>Split3: 106train, 34test</li>
+<li>Split4 : 140train, 34 test</li>
+</ul>
+<p>As you can see that the model has trained on larger and larger history. This is interesting becuse at different time interval, the variance of the data are different. It provides a better picture of how generalized the model is. In addition, the test size stays consistent which means we can compare each split&rsquo;s result. In the example below, I choose the Root mean squared error as a metric to evalute the model peformance.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">backtest_model</span>(data,model,split):
+    <span style="color:#66d9ef">if</span> isinstance(data,pd<span style="color:#f92672">.</span>DataFrame):
+        X <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>values
+    <span style="color:#66d9ef">else</span>:
+        X <span style="color:#f92672">=</span> data
+    splits_rmse <span style="color:#f92672">=</span> []
+    splits <span style="color:#f92672">=</span> TimeSeriesSplit(split)
+    <span style="color:#66d9ef">for</span> train_index, test_index <span style="color:#f92672">in</span> splits<span style="color:#f92672">.</span>split(X):
+        train <span style="color:#f92672">=</span> X[train_index]
+        test <span style="color:#f92672">=</span> X[test_index]
+        period <span style="color:#f92672">=</span> len(test)
+        predict <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(test<span style="color:#f92672">.</span>shape)
+        forecast,_,_ <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>forecast(steps<span style="color:#f92672">=</span>period,alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.05</span>)
+        rmse <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>sqrt(mean_squared_error(test,forecast))
+        splits_rmse<span style="color:#f92672">.</span>append(rmse)
+    <span style="color:#66d9ef">return</span> splits_rmse
+</code></pre></div><p>After running the above program. the average root mean squared error (standard deviation of prediction error) of four splits is 2887 and the standard deviation of the dataset is 2830 which means that our model prediction is quite good.</p>
+<h4 id="9-accuracy-metrics-for-time-series-forecast">9. accuracy metrics for time series forecast</h4>
+<ol>
+<li>Mean Absolute Percentage Error (MAPE)</li>
+<li>Mean Error (ME)</li>
+<li>Mean Absolute Error (MAE)</li>
+<li>Mean Percentage Error (MPE)</li>
+<li>Root Mean Squared Error (RMSE)</li>
+</ol>
+<p>The MAPE are more commonly used to forecast two different series since it is a percentage error which vary between 0 and 1. You can judge the forecast disregard the scale of the time series.</p>
+<p>The other metrics are quantitative metrics which can be hard to compare the forecast of two different scaled time series.</p>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+    </figure>
+    
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://qiuhao123.github.io/">Qiuhao Jin</a></h4>
+  
+  <p>Read <a href="https://qiuhao123.github.io/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Durham, NC, USA</span>
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this page</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Introduction%20to%20Time%20Series%20Forecasting&nbsp;-&nbsp;Qiuhao%20Jin&amp;url=https%3a%2f%2fqiuhao123.github.io%2fintroduction_to_time_series_forecasting%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiuhao123.github.io%2fintroduction_to_time_series_forecasting%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fqiuhao123.github.io%2fintroduction_to_time_series_forecasting%2f&amp;description=Introduction%20to%20Time%20Series%20Forecasting"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fqiuhao123.github.io%2fintroduction_to_time_series_forecasting%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+<aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/ad-analysis/">
+          <section class="post">
+              <h2>Ad Analysis</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Qiuhao Jin</a> © Qiuhao Jin Duke 2021</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

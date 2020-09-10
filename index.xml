@@ -12,7 +12,29 @@
     
     
     <item>
-      <title>Euler Project</title>
+      <title>Introduction to Time Series Forecasting</title>
+      <link>https://qiuhao123.github.io/introduction_to_time_series_forecasting/</link>
+      <pubDate>Wed, 09 Sep 2020 15:20:50 -0400</pubDate>
+      
+      <guid>https://qiuhao123.github.io/introduction_to_time_series_forecasting/</guid>
+      <description>why forecast?
+Becasue, forecasting a time series has tremendous value. In the ad analysis project, predicting the number of impression for different ads can drive a company&amp;rsquo;s decision on how to spend their money on ads.
+Forecasting can be divided into two parts:
+ Univeriate Time Series Forecasting: if you only use the previous value of a time series to predict the future value multivariate Time Series Forecasting: if you use external variables to forecast the future value.</description>
+    </item>
+    
+    <item>
+      <title>Ad Analysis</title>
+      <link>https://qiuhao123.github.io/ad-analysis/</link>
+      <pubDate>Tue, 08 Sep 2020 20:10:37 -0400</pubDate>
+      
+      <guid>https://qiuhao123.github.io/ad-analysis/</guid>
+      <description>Introduction Optimizing ads is one of the most intellectually challenging jobs as a data scientist can do. It is a complex problem given a huge size of the observations as well as number of features that can be used. The goal of this project is to take a look at several ad campaigns and analyze the performance and predict the future performance.
+Challenge Description company XYZ is a food delivery company, in order to get customers, they rely significantly on online ads, such as Google or Facebook.</description>
+    </item>
+    
+    <item>
+      <title>Euler-Project</title>
       <link>https://qiuhao123.github.io/euler-project/</link>
       <pubDate>Mon, 07 Sep 2020 09:12:37 -0400</pubDate>
       
@@ -22,16 +44,18 @@ Largest Palindrome Product A palindrome number reads the same both ways. For exa
     </item>
     
     <item>
-      <title></title>
+      <title>Build a personal website with Hugo </title>
       <link>https://qiuhao123.github.io/personal_website_blog/</link>
       <pubDate>Sun, 23 Aug 2020 11:57:02 -0400</pubDate>
       
       <guid>https://qiuhao123.github.io/personal_website_blog/</guid>
-      <description>Build a personal website with Hugo Introduction to HUGO and GitPage Hugo is one of the most popular open-source static generator and is written in GO. It is simple and easy to deploy.
+      <description>Introduction to HUGO and GitPage Hugo is one of the most popular open-source static generator and is written in GO. It is simple and easy to deploy.
 Github Pages is a static web hosting service provided by Github which provides convenient deployment directly through Github repository.
 The following intruction is suitable on Mac.
 STEP 1: Installation install Hugo
-open your terminal, run the following command:</description>
+open your terminal, run the following command:
+brew install hugo
+check the hugo version, run the following command:</description>
     </item>
     
     <item>
