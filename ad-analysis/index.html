@@ -118,8 +118,8 @@ MathJax.Hub.Config({
     },
     "headline": "Ad Analysis",
     "name": "Ad Analysis",
-    "wordCount":  1031 ,
-    "timeRequired": "PT5M",
+    "wordCount":  1902 ,
+    "timeRequired": "PT9M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
@@ -282,7 +282,7 @@ MathJax.Hub.Config({
 <li>total_revenue : how much revenue came from the conversions</li>
 <li>ad : we have several different ad groups. This shows which ad group we are considering</li>
 </ul>
-<h3 id="challenge1">Challenge1</h3>
+<h3 id="challenge1"><strong>Challenge1</strong></h3>
 <p>since I want to identify the top 5 best ad group. There are several metrics can be used:</p>
 <ul>
 <li>average revenue per click(RPC) per group, calculated as (total revenue) / (total clicks)</li>
@@ -318,12 +318,23 @@ MathJax.Hub.Config({
 <p><img src="/images/ad_analysis_images/top_rpm.png" alt="image alt text"></p>
 <p>Top 5 ad groups with largest RPC</p>
 <p><img src="/images/ad_analysis_images/top_rpc.png" alt="image alt text"></p>
-<h3 id="challenge-2">Challenge 2</h3>
+<h3 id="challenge-2"><strong>Challenge 2</strong></h3>
 <p>In order to predict the number of impressions on a specific day, I first need to understand the historical  impression performance of each ad group.</p>
 <p><img src="/images/ad_analysis_images/time_impression.png" alt="image alt text"></p>
 <p>from the above image, each different ad groups has different temporal orders. Let&rsquo;s try to understand the patterns of ad_group_1.</p>
 <p><img src="/images/ad_analysis_images/ad_group_1_vs_impression.png" alt="image alt text"></p>
 <p>There are several peaks in the pattern. However, we need to further test the stationarity of ad_group_1 impressions. In addition, visualizing the mean impression over time and standard deviation over time is impreative to ensure that our time series data is not a white noise process.</p>
+<h4 id="white-noise-process">white noise process</h4>
+<p><strong>what is white noise process?</strong></p>
+<p>a white noise process means that a time series is white noise if the variables are independent and identically distributed with a mean of zero.</p>
+<p>This also means that the time series has constant variance and each value has zero correlation with other values in time series.</p>
+<p><strong>why does it matter?</strong></p>
+<ul>
+<li>if the time series is white noise, then it is random and you can&rsquo;t model it to make prediction</li>
+<li>the error from a time series should ideally be white noise</li>
+</ul>
+<p>when forecast errors are white noise it means that all of the signal information in the time series has been used by the model. All that is left is the random fluctuations that can&rsquo;t be modeled.</p>
+<p>a sign that model predictions are not white noise is an indication that further improvements to forecast model maybe possible.</p>
 <h4 id="check-stationarity">Check Stationarity</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_stationarity</span>(timeseries):
     <span style="color:#75715e">#determine rolling statistics, make sure the time series is not white noise </span>
@@ -365,6 +376,133 @@ test_stationarity(ad_group)
 <ul>
 <li>My test result shows that the p-value is less than 0.05, i can reject the null hypothesis, conclude that the time series data is stationary</li>
 </ul>
+<h4 id="acf-and-pacf-plot">ACF and PACF Plot</h4>
+<p><img src="/images/intro_arima/acf.png" alt="image alt text"></p>
+<p>from the ACF plot, I observe that lag 1 is quite significangt since it is well above the confidence interval band. lag 2 is significant as well. However, I am going to be conservative and choose the p term to be 1.</p>
+<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/mysite/static/images/intro_arima/pacf.png" alt="image alt text"></p>
+<p>from the PACF plot, I observe that lag 1 and lag 2 are both significant. However, to be conservative, I choose the q term to be 1.</p>
+<h4 id="ar--model">AR  model</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import packages</span>
+<span style="color:#f92672">from</span> statsmodels.tsa.arima_model <span style="color:#f92672">import</span> ARIMA
+<span style="color:#f92672">from</span> statsmodels.tools.eval_measures <span style="color:#f92672">import</span> aicc
+
+results_AR <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(disp<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+<span style="color:#66d9ef">print</span>(results_AR<span style="color:#f92672">.</span>summary())
+fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>))
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(ad_group)
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(results_AR<span style="color:#f92672">.</span>fittedvalues, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>)
+residuals <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(results_AR<span style="color:#f92672">.</span>resid)
+residuals<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kde&#39;</span>,ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">1</span>])
+</code></pre></div><p>After running the above program, we would like to check the fitted value vs the actual value</p>
+<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/mysite/static/images/intro_arima/true_vs_fitted.png" alt="image alter text"></p>
+<p>The result looks decent, Let&rsquo;s check the residual error and make sure it is a white noise process.</p>
+<p><img src="/images/intro_arima/residual_plot.png" alt="image alter text"></p>
+<h4 id="ma-model">MA model</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> ARIMA(ad_group[<span style="color:#e6db74">&#39;shown&#39;</span>],order<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>))
+results_MA <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(disp<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+<span style="color:#66d9ef">print</span>(results_MA<span style="color:#f92672">.</span>summary())
+fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>))
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(ad_group)
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(results_MA<span style="color:#f92672">.</span>fittedvalues, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>)
+residuals <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(results_MA<span style="color:#f92672">.</span>resid)
+residuals<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kde&#39;</span>,ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">1</span>])
+</code></pre></div><p>Let&rsquo;s check the fitted value vs true value and the residual error to make sure they are white noise.</p>
+<p><img src="/images/ad_analysis_images/MA_model.png" alt="image alter text"></p>
+<p>The error appears to have a zero mean and follows a gaussian distribution.</p>
+<h4 id="arma-model">ARMA model</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> ARIMA(ad_group[<span style="color:#e6db74">&#39;shown&#39;</span>],order<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>))
+final_ARMA <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(disp<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+<span style="color:#66d9ef">print</span>(final_ARMA<span style="color:#f92672">.</span>summary())
+fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>))
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(ad_group)
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(final_ARMA<span style="color:#f92672">.</span>fittedvalues, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>)
+residuals <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(final_ARMA<span style="color:#f92672">.</span>resid)
+residuals<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kde&#39;</span>,ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">1</span>])
+</code></pre></div><p>Let&rsquo;s check the fitted value and the residual errors</p>
+<p><img src="/images/ad_analysis_images/ARMA_model.png" alt="image alter text"></p>
+<p>The errors appear to have zero means and follows a gussian distribution</p>
+<h4 id="grid-search-for-optimal-p-q-term">Grid search for optimal p, q term</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">grid_search_arima</span>(data):
+    mat_aic <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>))
+    <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>):
+        <span style="color:#66d9ef">for</span> q <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>):
+            <span style="color:#66d9ef">try</span>:
+                <span style="color:#75715e">#build model for each p,q</span>
+                model <span style="color:#f92672">=</span> ARIMA(data,order<span style="color:#f92672">=</span>(p,<span style="color:#ae81ff">0</span>,q))
+                results_ARMA <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(disp<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+                <span style="color:#75715e">#fill mat_aic with corresponding p,q</span>
+                mat_aic[p<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][q<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> results_ARMA<span style="color:#f92672">.</span>aic
+            <span style="color:#66d9ef">except</span>:
+                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;not invertible&#39;</span>)
+  
+    min_i, min_j <span style="color:#f92672">=</span> None, None
+    min_aic <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+    <span style="color:#75715e">#find the index of minimum aic score in mat_aic</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(mat_aic<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]):
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(mat_aic<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]):
+            <span style="color:#66d9ef">if</span> mat_aic[i][j] <span style="color:#f92672">&lt;</span> min_aic <span style="color:#f92672">and</span> mat_aic[i][j] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+                min_aic <span style="color:#f92672">=</span> mat_aic[i][j]
+                min_i, min_j <span style="color:#f92672">=</span> i,j
+    <span style="color:#66d9ef">return</span> min_i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, min_j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p>The optimal p, q term are 1, 2 and the evaluation metric i use in this case is AIC metrics, which is a popular metric to measure the fitness of the model. Lower the value means the better the fit.</p>
+<h4 id="forecasting">Forecasting</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forcaset_each_group</span>(df):
+    ad_group_dict <span style="color:#f92672">=</span> {}
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">41</span>):
+        <span style="color:#75715e">#extract date and shown for each ad_group</span>
+        ad_group <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;ad&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;ad_group_&#39;</span><span style="color:#f92672">+</span>str(i)][[<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;shown&#39;</span>]]
+        <span style="color:#75715e">#set date as index</span>
+        ad_group<span style="color:#f92672">.</span>index <span style="color:#f92672">=</span> ad_group<span style="color:#f92672">.</span>date
+        <span style="color:#75715e">#drop date column</span>
+        ad_group <span style="color:#f92672">=</span> ad_group<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#39;date&#39;</span>,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        <span style="color:#75715e"># grid search the best p, q for each ARIMA model</span>
+        p,q <span style="color:#f92672">=</span> grid_search_arima(ad_group[<span style="color:#e6db74">&#39;shown&#39;</span>])
+        <span style="color:#75715e">#finalize the ARIMA model</span>
+        final_ARMA <span style="color:#f92672">=</span> ARIMA(ad_group[<span style="color:#e6db74">&#39;shown&#39;</span>],order<span style="color:#f92672">=</span>(p,<span style="color:#ae81ff">0</span>,q))<span style="color:#f92672">.</span>fit(disp<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+        <span style="color:#75715e">#forecast the next three values</span>
+        forecast, _, _ <span style="color:#f92672">=</span> final_ARMA<span style="color:#f92672">.</span>forecast(steps<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.05</span>)
+        <span style="color:#75715e">#backtest the final ARMA model</span>
+        split_rmse <span style="color:#f92672">=</span> backtest_model(ad_group[<span style="color:#e6db74">&#39;shown&#39;</span>],final_ARMA,<span style="color:#ae81ff">3</span>)
+        <span style="color:#75715e">#average rmse over three fold</span>
+        avg_rmse <span style="color:#f92672">=</span> sum(split_rmse)<span style="color:#f92672">/</span>len(split_rmse)
+        <span style="color:#75715e">#append rmse at the end of forecast</span>
+        result <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>append(forecast,avg_rmse)
+        <span style="color:#75715e">#append result into each group</span>
+        ad_group_dict[<span style="color:#e6db74">&#39;ad_group&#39;</span><span style="color:#f92672">+</span>str(i)] <span style="color:#f92672">=</span> result 
+    <span style="color:#66d9ef">return</span> ad_group_dict
+</code></pre></div><p>The prediction of number of ads shown on December 15th</p>
+<p><img src="/images/ad_analysis_images/table_result.png" alt="image alter text"></p>
+<p>The above table shows that the RMSE is approximately 5% of our prediction value. The standard deviation of the data set is approximately the same as the RMSE which shows that this is a good prediction model.</p>
+<h4 id="challenge3"><strong>Challenge3</strong></h4>
+<p>In order to cluster ads into three different group by the trend of the average cost per click, I fit a linear model with time as independent variable and average cost per click as dependent variable for each ad group. If the p-value of coefficient of time is non significant, then we consider the there is no trend in average cost per click (0). if the p-value of coefficient is significant and the coefficient is positive, then positive trend (1). if the coefficient is negative, then negative trend(-1).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_ad_groups</span>(df):
+    ad_group_dict <span style="color:#f92672">=</span> {}
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">41</span>):
+        <span style="color:#75715e">#extract only date and avg_cost_per_click columns</span>
+        ad_group <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;ad&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;ad_group_&#39;</span><span style="color:#f92672">+</span>str(i)][[<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;avg_cost_per_click&#39;</span>]]
+        <span style="color:#75715e">#convert date to integer</span>
+        ad_group[<span style="color:#e6db74">&#39;t&#39;</span>] <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(ad_group)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)]
+        <span style="color:#75715e">#build linear regression model</span>
+        model <span style="color:#f92672">=</span> smf<span style="color:#f92672">.</span>ols(formula<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;avg_cost_per_click ~ t&#39;</span>,data<span style="color:#f92672">=</span>ad_group)<span style="color:#f92672">.</span>fit()
+        <span style="color:#75715e">#check the pvalue, if not significant</span>
+        <span style="color:#66d9ef">if</span> model<span style="color:#f92672">.</span>pvalues<span style="color:#f92672">.</span>t <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.05</span>:
+            ad_group_dict[<span style="color:#e6db74">&#39;ad_group&#39;</span><span style="color:#f92672">+</span>str(i)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#75715e">#if the coefficient is positive</span>
+            <span style="color:#66d9ef">if</span> model<span style="color:#f92672">.</span>params<span style="color:#f92672">.</span>t <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+                ad_group_dict[<span style="color:#e6db74">&#39;ad_group&#39;</span><span style="color:#f92672">+</span>str(i)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+            <span style="color:#75715e">#if the coefficient is negative</span>
+            <span style="color:#66d9ef">else</span>:
+                ad_group_dict[<span style="color:#e6db74">&#39;ad_group&#39;</span><span style="color:#f92672">+</span>str(i)] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> ad_group_dict
+</code></pre></div><p><img src="/images/ad_analysis_images/cluster_group.png" alt="image alter text"></p>
+<h4 id="further-improvement"><strong>Further Improvement</strong></h4>
+<ul>
+<li>try different model (vector auto regression) to predict the number of impression</li>
+<li>try k-means clustering to predict the trend of the group</li>
+<li>evaluate the model with different metrics such as Root mean percent error, min max ratio.</li>
+</ul>
+<p>if you are interested in detail explaination of time series model. you can visit my other <a href="https://qiuhao123.github.io/introduction_to_time_series_forecasting/">blog</a></p>
 
 
 
