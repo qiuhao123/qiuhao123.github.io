@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Malaria</title>
+      <link>https://qiuhao123.github.io/malaria/</link>
+      <pubDate>Wed, 16 Sep 2020 15:45:57 -0400</pubDate>
+      
+      <guid>https://qiuhao123.github.io/malaria/</guid>
+      <description>Introduction the objective of this blog is to demostrate three informative visualization about Malaria from the dataset
+I mainly focus on two datasets:
+ Malaria_death_age.csv which describe number of Malaria deaths incidence from 1990 until 2016 over 200 countries across different age groups Malaria_death.csv which describe Malaria deaths by over 200 countries for all ages across the world and over time  Visualization 1 First, I would like to understand which age group has the highest number of malaria death from 1990 to 2016.</description>
+    </item>
+    
+    <item>
       <title>Introduction to Time Series Forecasting</title>
       <link>https://qiuhao123.github.io/introduction_to_time_series_forecasting/</link>
       <pubDate>Wed, 09 Sep 2020 15:20:50 -0400</pubDate>

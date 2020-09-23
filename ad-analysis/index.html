@@ -186,6 +186,11 @@ MathJax.Hub.Config({
             	<a href="/introduction_to_time_series_forecasting/">Introduction to Time Series Forecasting</a>
             </li>
         
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/malaria/">Malaria</a>
+            </li>
+        
         
     </ul>
 
@@ -236,6 +241,8 @@ MathJax.Hub.Config({
         
         <li><a href="/ad-analysis/">Ad Analysis</a></li>
               
+        
+        
         
         
         
@@ -379,7 +386,7 @@ test_stationarity(ad_group)
 <h4 id="acf-and-pacf-plot">ACF and PACF Plot</h4>
 <p><img src="/images/intro_arima/acf.png" alt="image alt text"></p>
 <p>from the ACF plot, I observe that lag 1 is quite significangt since it is well above the confidence interval band. lag 2 is significant as well. However, I am going to be conservative and choose the p term to be 1.</p>
-<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/mysite/static/images/intro_arima/pacf.png" alt="image alt text"></p>
+<p><img src="/images/intro_arima/pacf.png" alt="image alt text"></p>
 <p>from the PACF plot, I observe that lag 1 and lag 2 are both significant. However, to be conservative, I choose the q term to be 1.</p>
 <h4 id="ar--model">AR  model</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import packages</span>
@@ -394,7 +401,7 @@ axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>pl
 residuals <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(results_AR<span style="color:#f92672">.</span>resid)
 residuals<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kde&#39;</span>,ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">1</span>])
 </code></pre></div><p>After running the above program, we would like to check the fitted value vs the actual value</p>
-<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/mysite/static/images/intro_arima/true_vs_fitted.png" alt="image alter text"></p>
+<p><img src="/images/intro_arima/true_vs_fitted.png" alt="image alter text"></p>
 <p>The result looks decent, Let&rsquo;s check the residual error and make sure it is a white noise process.</p>
 <p><img src="/images/intro_arima/residual_plot.png" alt="image alter text"></p>
 <h4 id="ma-model">MA model</h4>
