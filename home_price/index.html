@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Home_price"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Home_price &middot; Qiuhao Jin" />
+  	<meta property="og:site_name" content="Qiuhao Jin" />
+  	<meta property="og:url" content="https://qiuhao123.github.io/home_price/" />
+    <script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+    
+        
+            <meta property="og:image" content="/images/cover.png"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-09-28T09:12:47-04:00" />
+
+    
+    
+
+    <title>Home_price &middot; Qiuhao Jin</title>
+
+    
+    <meta name="description" content="Introduction Housing price are an an important Reflection of the economy, and housing prices ranges are of great interest for both buyers and sellers. In this p" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Qiuhao Jin" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <link rel="canonical" href="https://qiuhao123.github.io/home_price/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://qiuhao123.github.io/images/logo.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://qiuhao123.github.io/images/logo.png",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Home_price",
+    "name": "Home_price",
+    "wordCount":  2740 ,
+    "timeRequired": "PT13M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://qiuhao123.github.io/home_price/",
+    "datePublished": "2020-09-28T09:12Z",
+    "dateModified": "2020-09-28T09:12Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qiuhao123.github.io/home_price/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/ad-analysis/">Ad Analysis</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/personal_website_blog/">Build a personal website with Hugo </a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/contact/">Contact</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/euler-project/">Euler-Project</a>
+            </li>
+        
+            
+            <li class="nav-opened nav-current" role="presentation">
+            	<a href="/home_price/">Home_price</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/introduction_to_time_series_forecasting/">Introduction to Time Series Forecasting</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/malaria/">Malaria</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav overlay clearfix">
+
+
+      
+        <a class="blog-logo" href="https://qiuhao123.github.io/"><img src="/images/logo.png" alt="Home" /></a>
+      
+      
+          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+      
+    </nav>
+
+    
+
+
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post ">
+    <header class="post-header">
+      <nav class="breadcrumb">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li><a href="/home_price/">Home_price</a></li>
+              
+        
+        
+        
+        
+        
+        
+        
+      </nav>
+
+
+        <h1 class="post-title">Home_price</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+
+
+<h3 id="introduction">Introduction</h3>
+<p>Housing price are an an important Reflection of the economy, and housing prices ranges are of great interest for  both buyers and sellers. In this project, house price index will be predicted given serveral indicator variables. The goal of this project is to create a regression model that are able to estimate the house index given the features and provide any interesting business insight within the <a href="https://github.com/qiuhao123/house_price_index_prediction/blob/master/shiller_home_index.csv">dataset</a></p>
+<h3 id="data-acquisition">Data Acquisition</h3>
+<p>This dataset is from Dr. Jimmie Lenz. The project aims to apply various python tools to get a visual understanding of the data and clean it to make it ready to apply machine learning algorithm. The dataset can be found here.</p>
+<h3 id="data-cleaning">Data Cleaning</h3>
+<p><img src="/images/house_price/original_df_messy.png" alt="image alter text"></p>
+<p>The original dataset is quite messy. There are 19 different features. However, most of the features are only labeling the data source and logged date. There are total 7 valuable variables</p>
+<p>Independent variable:</p>
+<ul>
+<li>Cost index</li>
+<li>population</li>
+<li>Consumer price index</li>
+<li>long rate</li>
+<li>CPI annual</li>
+<li>Nominal home price index</li>
+</ul>
+<p>dependent variable</p>
+<ul>
+<li>Real Home index</li>
+</ul>
+<h3 id="data-exploratory-analysis">Data Exploratory analysis</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># visualization of the trend of indexs</span>
+fig,ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>))
+origin_df<span style="color:#f92672">.</span>plot<span style="color:#f92672">.</span>line(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;home_index_date&#39;</span>,y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;real_home_index&#39;</span>,ax<span style="color:#f92672">=</span>ax,label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;real_home_index&#39;</span>)
+origin_df<span style="color:#f92672">.</span>plot<span style="color:#f92672">.</span>line(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;home_index_date&#39;</span>,y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;real_cost_index&#39;</span>,ax<span style="color:#f92672">=</span>ax,label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;real_cost_index&#39;</span>)
+origin_df<span style="color:#f92672">.</span>plot<span style="color:#f92672">.</span>line(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;home_index_date&#39;</span>,y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;population&#39;</span>,ax<span style="color:#f92672">=</span>ax,label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;population&#39;</span>)
+origin_df<span style="color:#f92672">.</span>plot<span style="color:#f92672">.</span>line(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;home_index_date&#39;</span>,y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;long_rate&#39;</span>,ax<span style="color:#f92672">=</span>ax,label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;long_rate&#39;</span>)
+origin_df<span style="color:#f92672">.</span>plot<span style="color:#f92672">.</span>line(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;home_index_date&#39;</span>,y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cpi_annual&#39;</span>,ax<span style="color:#f92672">=</span>ax,label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cpi_annual&#39;</span>)
+ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;year&#39;</span>)
+ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;index&#39;</span>)
+ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;yearly index trend&#39;</span>)
+plt<span style="color:#f92672">.</span>tight_layout()
+</code></pre></div><p><img src="/images/house_price/yearly_index_price.png" alt="image alter text"></p>
+<p>From the plot above, we can clearly see that home index, cost index,  population and annual CPI are all increasing. However, the long rate stays relative constant.</p>
+<p>The time sampling rate in this dataset is different</p>
+<ul>
+<li>the observation from 1890 to1952 are sampled on yearly bases</li>
+<li>the observation from 1953 to 2019 are sampled on monthly bases</li>
+</ul>
+<p>There are two solution to the above issue:</p>
+<ol>
+<li>downsample the data after 1953 to yearly bases and combine both parts and perform regression analysis</li>
+<li>upsample the data befre 1952 to monthly baeses and combine both parts and perform regression analysis</li>
+</ol>
+<h3 id="downsample-dataset-approach"><strong>downsample dataset approach</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">downsample</span>(original_df):
+    <span style="color:#e6db74">&#39;&#39;&#39;downsample the dataframe from monthly bases into yearly bases
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">    original_df: original dataframe. Pandas.Dataframe
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">    df: downsampled dataframe. Pandas.Dataframe
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    
+    df <span style="color:#f92672">=</span> origin_df
+    df1 <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;home_index_date&#39;</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1952</span>]
+    df2 <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;home_index_date&#39;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1952</span>]
+    df2[<span style="color:#e6db74">&#39;year&#39;</span>],df2[<span style="color:#e6db74">&#39;day&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;home_index_date&#39;</span>]<span style="color:#f92672">.</span>divmod(<span style="color:#ae81ff">1</span>)
+    df2  <span style="color:#f92672">=</span> df2<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;year&#39;</span>)<span style="color:#f92672">.</span>min()<span style="color:#f92672">.</span>reset_index()
+    df2 <span style="color:#f92672">=</span> df2<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;home_index_date&#39;</span>,<span style="color:#e6db74">&#39;day&#39;</span>],axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    df2<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;home_index_date&#39;</span>, <span style="color:#e6db74">&#39;real_home_index&#39;</span>, <span style="color:#e6db74">&#39;real_cost_index&#39;</span>, <span style="color:#e6db74">&#39;population&#39;</span>,<span style="color:#e6db74">&#39;long_rate&#39;</span>,<span style="color:#e6db74">&#39;cpi_annual&#39;</span>]
+    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([df1,df2],ignore_index<span style="color:#f92672">=</span>True)
+    
+    <span style="color:#66d9ef">return</span> df
+</code></pre></div><p>after running the above program, there are total 128 observations within this dataset. In order to fit a linear regression model on the dataset, I also have to check the assumption for linear regression</p>
+<ul>
+<li><strong>Linearity</strong>: The relationship between X and the mean of Y is linear</li>
+<li><strong>Homoscedasticity</strong>: The variance of residual is the same for any value of X</li>
+<li><strong>Independence</strong>: Observations are independent of each other</li>
+<li><strong>Normality</strong>: For any fixed value of X, the residual error is normally distributed and additive.</li>
+</ul>
+<p>I choose to use visualization method to test the linearity, homoscedasticity, normality. I also use Person Correlation coefficient method to verify the independence of our features.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">assumption_test</span>(model,y):
+    <span style="color:#e6db74">&#39;&#39;&#39;visualization of fitted value vs observed, residual vs fitted value, residual kernal density plot to exame the 
+</span><span style="color:#e6db74">        assumption of linear regression
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">    model: the linear regression model that I intend to test. statsmodel.models
+</span><span style="color:#e6db74">    y: the observation (&#39;home index&#39;)
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">    None
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    fitted_values <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict()
+    resids <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>resid
+    
+    fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">8</span>))
+    <span style="color:#75715e">#Linearity check</span>
+    sns<span style="color:#f92672">.</span>regplot(x<span style="color:#f92672">=</span>fitted_values,y<span style="color:#f92672">=</span>y,lowess<span style="color:#f92672">=</span>True,ax<span style="color:#f92672">=</span>ax[<span style="color:#ae81ff">0</span>])
+    ax[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;fitted value vs observed&#39;</span>)
+    ax[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fitted value&#39;</span>,ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;observed&#39;</span>)
+    
+    <span style="color:#75715e">#homoscedasticity check</span>
+    sns<span style="color:#f92672">.</span>regplot(x<span style="color:#f92672">=</span>fitted_values, y<span style="color:#f92672">=</span>resids, lowess<span style="color:#f92672">=</span>True, ax<span style="color:#f92672">=</span>ax[<span style="color:#ae81ff">1</span>], line_kws<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;color&#39;</span>: <span style="color:#e6db74">&#39;red&#39;</span>})
+    ax[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Residuals vs. fitted Values&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>)
+    ax[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fitted value&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Residuals&#39;</span>)
+    
+    <span style="color:#75715e">#normality check</span>
+    sns<span style="color:#f92672">.</span>kdeplot(resids,ax<span style="color:#f92672">=</span>ax[<span style="color:#ae81ff">2</span>])
+    ax[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;residual kde plot&#39;</span>)
+    ax[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>set(ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;density&#39;</span>,xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;residual&#39;</span>)
+</code></pre></div><p>Each plot above corresponds to a assumption test for linear regression. Since there is only 128 observations as  total samples. I choose to use the first 2/3 of the total samples (84) as training dataset and the rest of dataset is as testing dataset (The dataset is sorted in chronological order.)</p>
+<p><img src="/images/house_price/assumption_test.png" alt="image alter text"></p>
+<ul>
+<li>the fitted value vs observation plot shows that observation value may not increased as fast as fitted value. it shows that the linearity may not be satisfied</li>
+<li>the residual vs fitted plot also shows that the residual are mostly positive when fitted value is small. However, some of the residual are negative and some residuals are positive when fitted value is large. Thus, the relationship doesn&rsquo;t appear to be linear. In addition, the residual is not constant 0 and the variance appears to decrease as fitted value increased. The homoscedasticity is not satisified.</li>
+<li>the residual kernal density plot appears to be normal. the normality assumption is satisfied.</li>
+</ul>
+<p>In order to fully understand the linear regression residual, I also plot ACF and perform a Durbin Watson test to test the stationarity of the residual. The Durbin Watson statistic provides a test for significant residual autocorrelation at lag  1. The statistic is approximately equal to 2*(1-a), where a is the lag 1 residual autocorrelation. The test statistic resides in the default summary out of statsmodel&rsquo;s regression. some notes on the Durbin-Watson test:</p>
+<ul>
+<li>the test statistics alwasys has a value between 0 and 4</li>
+<li>value of 2 means that there is no autocorrelation in the sample</li>
+<li>values &lt; 2 indicate positive autocorrelation, values &gt; 2 indicate negative autocorrelation</li>
+</ul>
+<p><img src="/images/house_price/autocorrelation_plot.png" alt="image alter text"></p>
+<p>We can clearly see there is a autocorrelation when lag is smaller than 8. In addition, The Durbin Watson test statistic is 0.314 which means there is positive autocorrelation.</p>
+<p>I have also calculate the Person Correlation among all the features and visualized in seaborn heatmaps.</p>
+<p><img src="/images/house_price/Person_correlation.png" alt="image alter text"></p>
+<p>The threshold to determine the highly correlation between two variables are 0.8. From the heatmap, I can arrive the  conclusion that populaton is highly correlate with cpi_annual. It may cause overfitting issue in Linear  Regression</p>
+<p>Potential solution</p>
+<ul>
+<li>Linearity:
+<ul>
+<li>Non-linear transformation to dependent/independent variable (square, log)</li>
+<li>add extra features</li>
+</ul>
+</li>
+<li>Homoscedasticity:
+<ul>
+<li>log transformation of the dependent variable</li>
+<li>stationarize the series value (differencing, exponential smoothing)</li>
+<li>in case of minor positive autocorrelation, there may be some room to fine tune the model, for example, adding the lags of the dependent/independent variables</li>
+<li>capture the seasonal components</li>
+<li>include a linear trend term in case of consistent increasing/decreasing pattern in the residual</li>
+</ul>
+</li>
+<li>independence:
+<ul>
+<li>Perform feature selection</li>
+<li>Perform PCA to reduce the feature to small set of uncorrelated component</li>
+</ul>
+</li>
+<li>normality:
+<ul>
+<li>so far the residual appears to be normal</li>
+</ul>
+</li>
+</ul>
+<h3 id="feature-engineering">feature engineering</h3>
+<ol>
+<li>
+<p>One of the potential solution for homoscedasticity is to generate lagged features. Model as the following equation:</p>
+<p>$y_t = \beta_0 + \beta_1 * x + \beta_2*y_{t-1} + \beta_3* x_{t-1} + \epsilon$</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_features</span>(data,n_in,dropnan):
+    <span style="color:#e6db74">&#39;&#39;&#39;create lagged feature 
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">    data: target timeseries data. pandas.Dataframe
+</span><span style="color:#e6db74">    n_in: number of lag observations as input between 1 and len(data). float 
+</span><span style="color:#e6db74">    dropna: wheather or not to drop the NaN values. Boolean 
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Returns
+</span><span style="color:#e6db74">    -------
+</span><span style="color:#e6db74">    df: new Pandas dataframe for supervised machine learning
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">if</span> isinstance(data,pd<span style="color:#f92672">.</span>Series):
+        df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data)
+    <span style="color:#66d9ef">elif</span> isinstance(data,pd<span style="color:#f92672">.</span>DataFrame):
+        df <span style="color:#f92672">=</span> data
+    new_cols <span style="color:#f92672">=</span> [df]
+    <span style="color:#75715e">#lag all the columns in df</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,n_in<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+        temp <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>shift(i)
+        temp<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> temp<span style="color:#f92672">.</span>columns <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_lag_&#39;</span> <span style="color:#f92672">+</span> str(i)
+        temp<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#39;home_index_date_lag_&#39;</span><span style="color:#f92672">+</span>str(i),axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,inplace<span style="color:#f92672">=</span>True)
+        new_cols<span style="color:#f92672">.</span>append(temp)
+    
+    new_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat(new_cols,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    
+    <span style="color:#66d9ef">if</span> dropnan:
+        new_df <span style="color:#f92672">=</span> new_df<span style="color:#f92672">.</span>dropna()
+    <span style="color:#66d9ef">return</span> new_df
+</code></pre></div><p>Since there are only 128 observations, it is best practice to not have over 10 features. Thus, I decide to use Random Forest to pick the top 10 most important features.</p>
+<p><img src="/images/house_price/feature_rank.png" alt="image alter text"></p>
+<p>Random Forest model has selected all original feature and its lagged value as the most important features. I decide to build a linear regression model on selected feature with data from 1890 to 2008 (reserve the last 10 years data as test data). I also decide to use Root Mean Squared Error as our evaluation metrics.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> mean_squared_error
+rmse_test <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(mean_squared_error(y_test,y_pred))
+rmse_train <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(mean_squared_error(y_train,lr<span style="color:#f92672">.</span>predict(x_train)))
+std <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>std(y_test)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;RMSE for training dataset is </span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74">, RMSE for test dataset is </span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74"> and standard deviation of test dataset is </span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74">&#34;</span>
+      <span style="color:#f92672">%</span>(rmse_train,rmse_test,std))
+</code></pre></div><p>RMSE for training dataset is 6.132, RMSE for test dataset is 9.085 and standard deviation of test dataset is 13.967. The Durbain Watson statistic is 1.66. The result is pretty good Since the test dataset&rsquo;s standard deviation is 13.967 and test RMSE is 9.085 which means the prediction error is smaller than the varibility of test dataset. Let&rsquo;s perform a assumption check on our built model.</p>
+<p><img src="/images/house_price/lag1_model_assumption.png" alt="image alter text"></p>
+<p>The above plot shows that</p>
+<ul>
+<li>the first plot shows that linearity appers to be satisfied.</li>
+<li>Bowl shaped curve in second graph shows the residual increases as fitted value increases. The homoscadacity is not met.</li>
+<li>the third graph shows that the there is a small second peak around 15 which shows that the normality assumption is not met.</li>
+</ul>
+<ol start="2">
+<li>
+<p>square transform of dependent variable</p>
+<p><img src="/images/house_price/square_model_assumption.png" alt="image alter text"></p>
+<p>From the above three graphs, it shows that there is no improvement on homoscedecity and the residual is not normal. In addition, RMSE for training dataset is 16.805, RMSE for test dataset is 9.085 and standard deviation of test dataset is 13.967 which shows that the training RMSE has increased and the test RMSE stays the same. The Durbain Watson statistic is 0.859 which shows more positive autocorrelation. It is not a good transformation.</p>
+</li>
+<li>
+<p>add linear and quaratic term as independent variables</p>
+<ol start="2">
+<li>
+<p>a linear regression without trend term:</p>
+<p>$y_t = \beta_0 + \beta_1 * X + \epsilon$</p>
+<p>a linear regression with linear time trend:</p>
+<p>$y_t = \beta_0 + \beta_1 * X + \beta_2*t + \epsilon$</p>
+<p>where t represents the date, it can be encoded as 1, 2, 3 &hellip; so forth</p>
+<p>a linear regression with quadratic time trend:</p>
+<p>$y_t = \beta_0 + \beta_1 * X + \beta_2*t^2 + \epsilon$</p>
+<p><img src="/images/house_price/linear_term_model_assumption.png" alt="image alter text"></p>
+<p>RMSE for training dataset is 6.078, RMSE for test dataset is 9.781 and standard deviation of test dataset is 13.967. The result does not show significant improvement. However, the DW statistic is 1.59 which is worse then the first approach.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>add extra features with lag = 2 with model expressed in the following equation:</p>
+<p>$y_t = \beta_0 + \beta_1 * x + \beta_2*y_{t-1} + \beta_3* x_{t-1} + \beta_4*y_{t-2}+\beta_5*x_{t-2} + \epsilon$</p>
+<p><img src="/images/house_price/lag2_model_assumption.png" alt="image alter text"></p>
+<p>RMSE for training dataset is 6.026, RMSE for test dataset is 7.200 and standard deviation of test dataset is 13.967. The Durbin Watson test statistic is 1.98 which shows there is not autocorrelation within the residual (better than first approach). However, the test RMSE is still not as good as first approach.</p>
+<p>put in a summary approach 1 (add extra feature with lag value = 1) appears to give the best performance based on RMSE and Durbain Watson statistics. Next, I would like to explore different models.</p>
+<h3 id="model-selection-with-walk-forward-validation">model Selection with walk forward validation</h3>
+<p>Since there is a singificant increasing/decreasing trend in the residual, I would like to try out gradient boosting models since it can learn the relationship between the input variable and the previous residual and Perhaps it may produce better result.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> TimeSeriesSplit
+<span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LinearRegression
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">backtest</span>(X,y,model,num_splits,metrics):
+    <span style="color:#e6db74">&#39;&#39;&#39;splits dataframe into several fold with different variance and measure test metrics
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">    X:input variables. Pandas.Series
+</span><span style="color:#e6db74">    y:output variable. Pandas.Series
+</span><span style="color:#e6db74">    model: the model you want to test. 
+</span><span style="color:#e6db74">    splits: number of folds. float
+</span><span style="color:#e6db74">    metrics: the metrics we want to measure rmse or mae
+</span><span style="color:#e6db74">       
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">    table: each fold with test statistics
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    splits <span style="color:#f92672">=</span> TimeSeriesSplit(num_splits)
+    table <span style="color:#f92672">=</span> {}
+       
+    index <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">for</span> train_idx, test_idx <span style="color:#f92672">in</span> splits<span style="color:#f92672">.</span>split(X):
+        x_train, y_train <span style="color:#f92672">=</span> X[train_idx], y[train_idx]
+        x_test, y_test <span style="color:#f92672">=</span> X[test_idx], y[test_idx]
+   
+        <span style="color:#66d9ef">if</span> model <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;linear_regression&#39;</span>:
+            model <span style="color:#f92672">=</span> LinearRegression()
+        <span style="color:#66d9ef">elif</span> model <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;gradient_boosting&#39;</span>:
+            model <span style="color:#f92672">=</span> GradientBoostingRegressor()
+        model<span style="color:#f92672">.</span>fit(x_train,y_train)
+        y_pred <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(x_test) 
+        <span style="color:#66d9ef">if</span> metrics <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;rmse&#39;</span>:
+            measure_metric <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(mean_squared_error(y_test,y_pred))
+        <span style="color:#66d9ef">elif</span> metrics <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;mae&#39;</span>:
+            measure_metric <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(np<span style="color:#f92672">.</span>abs(y_test<span style="color:#f92672">-</span>y_pred))
+        test_std <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>std(y_test)
+        train_rmse <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(mean_squared_error(y_train,model<span style="color:#f92672">.</span>predict(x_train)))
+   
+        table[<span style="color:#e6db74">&#39;split&#39;</span><span style="color:#f92672">+</span>str(index)] <span style="color:#f92672">=</span> [train_rmse,measure_metric,test_std]
+        index <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    result <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame([(k,v[<span style="color:#ae81ff">0</span>],v[<span style="color:#ae81ff">1</span>],v[<span style="color:#ae81ff">2</span>]) <span style="color:#66d9ef">for</span> k,v <span style="color:#f92672">in</span> table<span style="color:#f92672">.</span>items()],columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;fold&#39;</span>,<span style="color:#e6db74">&#39;train_rmse&#39;</span>,<span style="color:#e6db74">&#34;test_&#34;</span><span style="color:#f92672">+</span>metrics,<span style="color:#e6db74">&#39;test standard deviation&#39;</span>])
+    <span style="color:#66d9ef">return</span> result
+</code></pre></div><p>walk forward validation with gradient boosting regressor:</p>
+<p><img src="/images/house_price/backtest_gb.png" alt="image alter text"></p>
+<p>walk forward validation with linear regression:</p>
+<p><img src="/images/house_price/backtest_lr.png" alt="image alter text">we can clearly see that gradient boosting regressor&rsquo;s training_rmse is really small. However, the root mean squared error on test datase is approximatly 10-100 times of the training root mean squared error which shows that the algorithm is overfitting. On the other hand, linear regression algorithm is less overfitted when test with different dataset with different variance. It is more generalizable. Since we would like to predict a general trend of the house price index in next year. Linear regression model will be the most ideal.</p>
+<h3 id="final-model">final model</h3>
+<p>after running linear regression on dataset from 1890 until 2009. we have the following model</p>
+<p><img src="/images/house_price/downsample_final_model.png" alt="image alter text"></p>
+<p>The test RMSE is 9.085 and the test dataset standard deviation is 13.967.</p>
+<p>The significant indicator varaibles are <img src="/images/house_price/downsamples_sig_vars.png" alt="image alter text"></p>
+</li>
+</ol>
+<h3 id="upsample-dataset-approach"><strong>upsample dataset approach</strong></h3>
+<p>The second method is upsampling the dataset from 1890 to 1952 from yearly bases to monthly bases. We will use the linear interpolation as default parameters.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upsample</span>(original_df,numDays<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;30D&#39;</span>,method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pad&#39;</span>):
+    <span style="color:#e6db74">&#39;&#39;&#39;the function is going to upsample the original dataframe by specific number of days
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">    original_df: original dataframe. Pandas.dataframe
+</span><span style="color:#e6db74">    numDays: number of days that I intend to upsampled
+</span><span style="color:#e6db74">    method: the interpolate method can be &#39;linear&#39;,&#39;pad&#39;,
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">    df: new dataframe. Pandas.dataframe
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    df <span style="color:#f92672">=</span> origin_df
+    <span style="color:#75715e">#split the data into two different dataframe with different sampling frequency</span>
+    df1 <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;home_index_date&#39;</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1952</span>]
+    df2 <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;home_index_date&#39;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1952</span>]
+    <span style="color:#75715e">#convert the float date into datetime object</span>
+    df2[<span style="color:#e6db74">&#39;year&#39;</span>],df2[<span style="color:#e6db74">&#39;day_fraction&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;home_index_date&#39;</span>]<span style="color:#f92672">.</span>divmod(<span style="color:#ae81ff">1</span>)
+    df1[<span style="color:#e6db74">&#39;date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(df[<span style="color:#e6db74">&#39;home_index_date&#39;</span>]<span style="color:#f92672">.</span>astype(int)<span style="color:#f92672">.</span>astype(str),format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%Y&#39;</span>)
+    df1 <span style="color:#f92672">=</span> df1<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#39;home_index_date&#39;</span>,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    df2[<span style="color:#e6db74">&#39;day&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">365</span><span style="color:#f92672">*</span>df2[<span style="color:#e6db74">&#39;day_fraction&#39;</span>])<span style="color:#f92672">.</span>astype(int)
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convert_date</span>(row):
+        year <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(row[<span style="color:#e6db74">&#39;year&#39;</span>],format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%Y&#39;</span>)
+        date <span style="color:#f92672">=</span> year <span style="color:#f92672">+</span> timedelta(row[<span style="color:#e6db74">&#39;day&#39;</span>])
+        <span style="color:#66d9ef">return</span> date 
+    df2[<span style="color:#e6db74">&#39;date&#39;</span>] <span style="color:#f92672">=</span> df2[[<span style="color:#e6db74">&#39;year&#39;</span>,<span style="color:#e6db74">&#39;day&#39;</span>]]<span style="color:#f92672">.</span>apply(convert_date,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    
+    df2 <span style="color:#f92672">=</span> df2<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;home_index_date&#39;</span>,<span style="color:#e6db74">&#39;year&#39;</span>,<span style="color:#e6db74">&#39;day&#39;</span>,<span style="color:#e6db74">&#39;day_fraction&#39;</span>],axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    df1<span style="color:#f92672">.</span>index <span style="color:#f92672">=</span> df1[<span style="color:#e6db74">&#39;date&#39;</span>]
+    df2<span style="color:#f92672">.</span>index <span style="color:#f92672">=</span> df2[<span style="color:#e6db74">&#39;date&#39;</span>]
+    <span style="color:#75715e">#upsample the date with specific number of days</span>
+    upsampled <span style="color:#f92672">=</span> df1[[<span style="color:#e6db74">&#39;real_home_index&#39;</span>,<span style="color:#e6db74">&#39;real_cost_index&#39;</span>,<span style="color:#e6db74">&#39;population&#39;</span>,<span style="color:#e6db74">&#39;long_rate&#39;</span>,<span style="color:#e6db74">&#39;cpi_annual&#39;</span>]]<span style="color:#f92672">.</span>resample(numDays) 
+    interpolated <span style="color:#f92672">=</span> upsampled<span style="color:#f92672">.</span>interpolate(method<span style="color:#f92672">=</span>method)
+    df2 <span style="color:#f92672">=</span> df2<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#39;date&#39;</span>,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([interpolated,df2],axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>reset_index()
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;date&#39;</span>:<span style="color:#e6db74">&#39;home_index_date&#39;</span>})
+    
+    <span style="color:#66d9ef">return</span> df
+</code></pre></div><p>After upsampling the dataset, there are 1534 observations and the dataset looks like the below</p>
+<p><img src="/images/house_price/upsample_data.png" alt="image alter text"></p>
+<p>I also decide to use the latest 10 years of data as test data. since the dataset is sampled on monthly bases. There will be total 120 observations in test dataset and the rest data as training dataset. SInce there are over 1000 features, I would like to add extra features with lag value of 1 and lag value of 2 to improve the RMSE statistics.</p>
+<p>Lets the fit the linear regression model and check our residual</p>
+<p><img src="/images/house_price/upsample_lag2_data_linear.png" alt="image alter text"></p>
+<p>Wow, The R^2 value is almost 1 and the second plot also shows the homoscedacity assumption is met. However, the residual error appears to be not so normal. And the test_rmse is 0.724; train_rmse is 0.340, test dataset has standard deviation of 13.516 which shows that our model has improved significantly.</p>
+<p>Since I am padding the dataset with linear interpolation and could potentially add extra noise in the dataset. I then decided to only use the dataset after 1953 to perform a linear regression and compare our result.</p>
+<p><img src="/images/house_price/no_upsample_data_assumption_check.png" alt="image alter text"></p>
+<p>The testing RMSE is 0.682, the training RMSE is 0.462 and the test standard deviation is 13.516. From the above three plot, we can say that our linearity, homoscedacity, normality assumption has all met. In addition, the Durbin Watson statistic is 2.24 which shows that our residual has almost no autocorrelation.</p>
+<p>The final model on monthly sampled dataset are expressed as following:</p>
+<p><img src="/images/house_price/upsample_model.png" alt="image alter text"></p>
+<h3 id="test-final-model-on-yearly-based-data">test final model on yearly based data</h3>
+<p>I would like to test our final model on the monthly sampled data and compare the result.</p>
+<p>The RMSE for downsampling approach is 9.085 and the RMSE for upsampling approach is 7.779 and the standard deviation of test dataset is 13.967 which shows that our upsampling approach model performs better.</p>
+<h3 id="interesting-finding">Interesting finding</h3>
+<ul>
+<li>feature engineering with different time lags can significantly reduce the issue of residual autocorrelation</li>
+<li>In this dataset, log, square transform the dataset or add linear trend is not as useful as add lagged feature to reduce the autocorrelation within the dataset.</li>
+<li>Gradient boosting regressor is quite easy to overfit. Another challenge is to find the correct regulation parameters which takes more time to search. Thus, using Linear regression may be our best choice.</li>
+<li>On yearly based data, the significant indicator variables are real_home_index_lag_1, real_home_index_lag_2,</li>
+<li>on monthly based data, the significant indicator variables are cpi_annual,real_home_index_lag_1, long_rate_lag_1 cpi_annual_lag_1, real_home_index_lag_2</li>
+<li>upsample data with padding/linear increase tecnique has very little effect on getting better generality of the model. We cannot assume the fact that the house price, cost index, population, mogage rate, is neither constant nor in linear increasing pattern. In addition, padding also adds extra level of noise which may cause the model to mistaken the significance of an indicator varaible. We may be better off just use the original data.</li>
+<li>our model comparison has indicate that the regression model trained on monthly sampled dataset has achieved better RMSE score. higher sampling frequency can obtain more trend information in the market and with more data you can collect, the better result your model can offer.</li>
+<li>in both of our model, previous house index and previous two year house index has shown to be a significant variable and with a positive coefficient on previous year house index and negative coefficient on previous two year house index which shows that there may be some house price period cycle exist not only yearly but also monthly.</li>
+</ul>
+<p>You can find my Jupyter notebook <a href="https://github.com/qiuhao123/house_price_index_prediction.git">Here</a></p>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+    </figure>
+    
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://qiuhao123.github.io/">Qiuhao Jin</a></h4>
+  
+  <p>Read <a href="https://qiuhao123.github.io/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Durham, NC, USA</span>
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this page</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Home_price&nbsp;-&nbsp;Qiuhao%20Jin&amp;url=https%3a%2f%2fqiuhao123.github.io%2fhome_price%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiuhao123.github.io%2fhome_price%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fqiuhao123.github.io%2fhome_price%2f&amp;description=Home_price"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fqiuhao123.github.io%2fhome_price%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+<aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/malaria/">
+          <section class="post">
+              <h2>Malaria</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Qiuhao Jin</a> © Qiuhao Jin Duke 2021</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

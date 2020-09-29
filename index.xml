@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Home_price</title>
+      <link>https://qiuhao123.github.io/home_price/</link>
+      <pubDate>Mon, 28 Sep 2020 09:12:47 -0400</pubDate>
+      
+      <guid>https://qiuhao123.github.io/home_price/</guid>
+      <description>Introduction Housing price are an an important Reflection of the economy, and housing prices ranges are of great interest for both buyers and sellers. In this project, house price index will be predicted given serveral indicator variables. The goal of this project is to create a regression model that are able to estimate the house index given the features and provide any interesting business insight within the dataset
+Data Acquisition This dataset is from Dr.</description>
+    </item>
+    
+    <item>
       <title>Malaria</title>
       <link>https://qiuhao123.github.io/malaria/</link>
       <pubDate>Wed, 16 Sep 2020 15:45:57 -0400</pubDate>
