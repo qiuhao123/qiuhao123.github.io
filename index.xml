@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Database Normalization</title>
+      <link>https://qiuhao123.github.io/spotify_db_normalization/</link>
+      <pubDate>Mon, 05 Oct 2020 16:06:23 -0400</pubDate>
+      
+      <guid>https://qiuhao123.github.io/spotify_db_normalization/</guid>
+      <description>Introduction When developing the schema of a relational database, one of the most important aspects of to be taken into accountis to ensure that duplication is minimized. There are two reasons:
+ reduce the amount of required storage for data avoid unecessary data conflict that can be casued by the data duplication  Normalization in Database database normalization is one of the technique that can ensure the above two points. The core idea of database normalization is to divide the table into smaller subtables and store pointers to the data rather replicating it.</description>
+    </item>
+    
+    <item>
       <title>Home_price</title>
       <link>https://qiuhao123.github.io/home_price/</link>
       <pubDate>Mon, 28 Sep 2020 09:12:47 -0400</pubDate>
