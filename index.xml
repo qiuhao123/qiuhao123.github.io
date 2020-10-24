@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Star War Data Acuisiqtion</title>
+      <link>https://qiuhao123.github.io/starwar/</link>
+      <pubDate>Fri, 23 Oct 2020 22:58:08 -0400</pubDate>
+      
+      <guid>https://qiuhao123.github.io/starwar/</guid>
+      <description>Star War Data Acuisiqtion It is extremely important to learn how to accquire data from API using Request Package</description>
+    </item>
+    
+    <item>
       <title>Database Normalization</title>
       <link>https://qiuhao123.github.io/spotify_db_normalization/</link>
       <pubDate>Mon, 05 Oct 2020 16:06:23 -0400</pubDate>
