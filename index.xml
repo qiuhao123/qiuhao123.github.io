@@ -17,7 +17,9 @@
       <pubDate>Fri, 23 Oct 2020 22:58:08 -0400</pubDate>
       
       <guid>https://qiuhao123.github.io/starwar/</guid>
-      <description>Star War Data Acuisiqtion It is extremely important to learn how to accquire data from API using Request Package</description>
+      <description>Introduction It is extremely important to learn how to accquire data from API using Request Package
+Request package Request is a package to retreive data by making http request. I will use the Star War API as an example
+Fectch one character from API import requests person = requests.get(&amp;#39;https://swapi.dev/api/people/1&amp;#39;) person.json() The data retrieved from API is in Json format. It will be much clear if the data is in the table format.</description>
     </item>
     
     <item>

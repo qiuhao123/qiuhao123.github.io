@@ -39,7 +39,8 @@
     <title>Star War Data Acuisiqtion &middot; Qiuhao Jin</title>
 
     
-    <meta name="description" content="Star War Data Acuisiqtion It is extremely important to learn how to accquire data from API using Request Package" />
+    <meta name="description" content="Introduction It is extremely important to learn how to accquire data from API using Request Package
+Request package Request is a package to retreive data by mak" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -102,8 +103,8 @@
     },
     "headline": "Star War Data Acuisiqtion",
     "name": "Star War Data Acuisiqtion",
-    "wordCount":  19 ,
-    "timeRequired": "PT1M",
+    "wordCount":  439 ,
+    "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
@@ -274,8 +275,51 @@
     <section class="post-content">
 
 
-<h3 id="star-war-data-acuisiqtion">Star War Data Acuisiqtion</h3>
+<h3 id="introduction">Introduction</h3>
 <p>It is extremely important to learn how to accquire data from API using Request Package</p>
+<h3 id="request-package">Request package</h3>
+<p>Request is a package to retreive data by making http request. I will use the Star War API as an example</p>
+<h3 id="fectch-one-character-from-api">Fectch one character from API</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+person <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://swapi.dev/api/people/1&#39;</span>)
+person<span style="color:#f92672">.</span>json()
+</code></pre></div><p><img src="/images/starwar/person.png" alt="image alter text"></p>
+<p>The data retrieved from API is in Json format. It will be much clear if the data is in the table format. We can use    a json_normalize function from pandas package as following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+pd<span style="color:#f92672">.</span>json_normalize(person<span style="color:#f92672">.</span>json())
+</code></pre></div><p><img src="/images/starwar/table_person.png" alt="image alter text"></p>
+<h3 id="fetch-all-characters-from-api">Fetch all characters from API</h3>
+<p>after we are able to fetch one character from StarWar API, we are then able to fetch all characters from Star War using a for loop. In order to understand the number of the characters in Star War API. There is a &ldquo;count&rdquo; key that we can check.</p>
+<pre><code class="language-python " data-lang="python ">people = requests.get('https://swapi.dev/api/people')
+print('there are total {} characters'.format(people.json()['count']))
+</code></pre><p>After running the above code, there are total 82 characters. we then write a for loop to extract all the Star War characters. In addition, we will also check the success of retrieval process by retrieval code. If the code is 200 which means successful, if the code is 404 that means there is an error, we will continue to retrieve the next characters. After looping we will check if we have successfully retrieve all the characters from API by using assert.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_all_people</span>():
+    starWar_people <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame()
+    people <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://swapi.dev/api/people&#39;</span>)<span style="color:#f92672">.</span>json()
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(people[<span style="color:#e6db74">&#39;count&#39;</span>]):
+        character <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://swapi.dev/api/people/&#39;</span> <span style="color:#f92672">+</span> str(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
+        <span style="color:#66d9ef">if</span> character<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+            character_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>json_normalize(character<span style="color:#f92672">.</span>json())
+            starWar_people <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([character_df,starWar_people])
+        <span style="color:#66d9ef">elif</span> character<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">404</span>:
+            <span style="color:#66d9ef">continue</span>
+    <span style="color:#66d9ef">assert</span>(len(starWar_people)<span style="color:#f92672">==</span>people[<span style="color:#e6db74">&#39;count&#39;</span>])
+    <span style="color:#66d9ef">return</span> starWar_people
+</code></pre></div><p>after running the above code, we have the following table</p>
+<p><img src="/images/starwar/all__characters.png" alt="image alter text"></p>
+<p>Now Let&rsquo;s take a look at the oldest character and all the movies that he is in. We will use &ldquo;birth_year&rdquo; to calculate the age of the character. It appears that there are some character with unknown birth year. We will ignore those characters in this case. The rest of the characters are all born BBY which stands for &ldquo;Before the Battle of Yavin&rdquo;. The larger the number means the older the character is. We can fetch the oldest character by following code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> get_all_people()
+valid_birth_df <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;birth_year&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;BBY&#39;</span>)]
+oldest <span style="color:#f92672">=</span> valid_birth_df[valid_birth_df<span style="color:#f92672">.</span>birth_year <span style="color:#f92672">==</span> valid_birth_df[<span style="color:#e6db74">&#39;birth_year&#39;</span>]<span style="color:#f92672">.</span>max()]
+</code></pre></div><p>After running the code, the oldest character is Yoda which has over 800 BBY. we will then use the following code to get all the name of the movie that Yoda has appeared.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">films <span style="color:#f92672">=</span> oldest[<span style="color:#e6db74">&#39;films&#39;</span>]<span style="color:#f92672">.</span>squeeze()
+appeared_film <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> film <span style="color:#f92672">in</span> films:
+    film <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(film)
+    appeared_film<span style="color:#f92672">.</span>append(film<span style="color:#f92672">.</span>json()[<span style="color:#e6db74">&#39;title&#39;</span>])   
+appeared_film
+</code></pre></div><pre><code>['The Empire Strikes Back','Return of the Jedi','The Phantom Menace','Attack of the Clones','Revenge of the Sith']
+</code></pre><p><strong>May the Force be with You!!</strong></p>
 
 
 
