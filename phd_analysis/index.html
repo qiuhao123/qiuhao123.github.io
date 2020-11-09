@@ -39,7 +39,8 @@
     <title>Phd_data_dashboard &middot; Qiuhao Jin</title>
 
     
-    <meta name="description" content="PHD data dashboard " />
+    <meta name="description" content="The objective of this blog is to explore the Phd datase. We would like to build a data dashboard via streamlit package.
+Dataset Data presented in Doctorate Reci" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -102,8 +103,8 @@
     },
     "headline": "Phd_data_dashboard",
     "name": "Phd_data_dashboard",
-    "wordCount":  3 ,
-    "timeRequired": "PT1M",
+    "wordCount":  610 ,
+    "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
@@ -281,7 +282,142 @@
     <section class="post-content">
 
 
-<h3 id="phd-data-dashboard">PHD data dashboard</h3>
+<p>The objective of this blog is to explore the <a href="https://ncses.nsf.gov/pubs/nsf19301/data">Phd datase</a>. We would like to build a data dashboard via streamlit package.</p>
+<h3 id="dataset">Dataset</h3>
+<p>Data presented in <em>Doctorate Recipients from U.S. Universities:</em> <em>2017</em> were collected by the Survey of Earned Doctorates (SED). The Survey collects data on the number and characteristics of individuals receiving research doctoral degrees from U.S. There are total 72 tables within the dataset. Let&rsquo;s talk about streamlit package.</p>
+<h3 id="streamlit">Streamlit</h3>
+<p>Streamlit is an open source app framework specifically designed for ML engineers working with Python. It allows you to create a stunning looking application with only a few lines of code.A few of the advantages of using Streamlit tools like Dash and Flask:</p>
+<ul>
+<li>It embraces Python scripting; No HTML knowledge is needed!</li>
+<li>Less code is needed to create a beautiful application</li>
+<li>No callbacks are needed since widgets are treated as variables</li>
+<li>Data caching simplifies and speeds up computation pipelines.</li>
+</ul>
+<h4 id="installation">Installation</h4>
+<p>In order to install the streamlit package. We can use the following command in Mac terminal:</p>
+<pre><code>pip install streamlit
+</code></pre><p>we can open the terminal with following command</p>
+<pre><code>streamlit hello
+</code></pre><h4 id="dashboard">Dashboard</h4>
+<p>we first import all the neccesary package to perform data analysis</p>
+<pre><code>import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.express as px
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+import matplotlib.pyplot as plt
+from plotly import tools
+import plotly.offline as py
+</code></pre><p>then, let me introduce some basic features that you are likely to be using in your own apps. We will first read in the &ldquo;sed17-sr-tab005&rdquo; excel file and display a colormap with following code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_excel(<span style="color:#e6db74">&#39;data_tables/sed17-sr-tab005.xlsx&#39;</span>)
+df <span style="color:#f92672">=</span> df[<span style="color:#ae81ff">2</span>:]
+df<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>]
+df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop(df<span style="color:#f92672">.</span>index[<span style="color:#ae81ff">0</span>])
+df_ <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv&#39;</span>)
+df_code <span style="color:#f92672">=</span> df_[[<span style="color:#e6db74">&#39;code&#39;</span>,<span style="color:#e6db74">&#39;state&#39;</span>]]
+result <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>merge(df, df_code, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;inner&#39;</span>, left_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;State or location&#39;</span>, right_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;state&#39;</span>)
+
+<span style="color:#66d9ef">if</span> st<span style="color:#f92672">.</span>checkbox(<span style="color:#e6db74">&#39;Show Dataframe--Number of Doctorate recipients by States&#39;</span>):
+    st<span style="color:#f92672">.</span>write(result)
+
+fig <span style="color:#f92672">=</span> go<span style="color:#f92672">.</span>Figure(data<span style="color:#f92672">=</span>go<span style="color:#f92672">.</span>Choropleth(
+    locations<span style="color:#f92672">=</span>result[<span style="color:#e6db74">&#39;code&#39;</span>], <span style="color:#75715e"># Spatial coordinates</span>
+    z <span style="color:#f92672">=</span> result[<span style="color:#e6db74">&#39;Doctorate recipients&#39;</span>]<span style="color:#f92672">.</span>astype(float), <span style="color:#75715e"># Data to be color-coded</span>
+    locationmode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;USA-states&#39;</span>, <span style="color:#75715e"># set of locations match entries in `locations`</span>
+    colorscale <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blues&#39;</span>,
+    colorbar_title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Number of Doctorate recipients&#34;</span>,
+))
+
+fig<span style="color:#f92672">.</span>update_layout(
+    title_text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;State, ranked by number of doctorate recipients: 2017&#39;</span>,
+    geo_scope<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;usa&#39;</span>, <span style="color:#75715e"># limite map scope to USA</span>
+)
+
+st<span style="color:#f92672">.</span>plotly_chart(fig)
+</code></pre></div><p><img src="/images/phd_analysis/colortable.png" alt="image alter text"></p>
+<p>we would then display a multiselect box with &ldquo;sed17-sr-tab006&rdquo; excel file.</p>
+<pre><code>df_6 = pd.read_excel('data_tables/sed17-sr-tab006.xlsx')
+df_6 = df_6.iloc[2:5,1:]
+subjects = df_6.iloc[0].dropna().to_list()
+df_male = df_6.iloc[2].to_list()[::2]
+df_female = df_6.iloc[2].to_list()[1::2]
+df_6 = pd.DataFrame({'Male': df_male,
+                  'Female': df_female},
+                  index=subjects)
+
+sex = ['Male','Female']
+
+
+
+if st.checkbox('Show Dataframe--Doctorates awarded by sex'):
+    st.write(df_6)
+
+selected_metrics_2 = st.selectbox(
+    label=&quot;Choose...&quot;, options=subjects
+)
+
+fig = go.Figure()
+for i in subjects:
+    if selected_metrics_2 == i:
+        fig = go.Figure(data=[go.Pie(labels=sex, values=df_6.loc[i],title= i+' Doctorates awarded by sex')])
+
+
+st.plotly_chart(fig, use_container_width=True)
+
+
+
+subset_data = df_2
+country_name_input = st.multiselect('Choose one or more', df_2.columns[1:])
+# by country name
+if len(country_name_input) &gt; 0:
+    subset_data = df_2[country_name_input]
+
+fig = go.Figure()
+for i in subset_data.columns:
+        fig.add_trace(go.Scatter(x=df_2.Year, y=df_2[i],
+                        mode='lines+markers',
+                        name=i))
+
+st.plotly_chart(fig, use_container_width=True)
+
+</code></pre><p><img src="/images/phd_analysis/multiselect.png" alt="image alter text"></p>
+<p>Lastly, we would like to display a piechart for &ldquo;sed17-sr-tab002&rdquo; file to display the portion of Doctorate-granting by sex</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_2 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_excel(<span style="color:#e6db74">&#39;data_tables/sed17-sr-tab002.xlsx&#39;</span>)
+df_2 <span style="color:#f92672">=</span> df_2<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">4</span>:,:]
+df_2<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Year&#39;</span>,<span style="color:#e6db74">&#39;Doctorate-granting institutions&#39;</span>,<span style="color:#e6db74">&#39;Total&#39;</span>,<span style="color:#e6db74">&#39;Mean (per institution)&#39;</span>,<span style="color:#e6db74">&#39;Median (per institution)&#39;</span>]
+<span style="color:#75715e">#df_2 = pd.read_csv(&#39;&#39;)</span>
+<span style="color:#66d9ef">if</span> st<span style="color:#f92672">.</span>checkbox(<span style="color:#e6db74">&#39;Show Dataframe--Number of Doctorate recipients by Institutions&#39;</span>):
+    st<span style="color:#f92672">.</span>write(df_2)
+
+selected_metrics <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span>selectbox(
+    label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Choose...&#34;</span>, options<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Doctorate-granting institutions&#39;</span>,<span style="color:#e6db74">&#39;Total&#39;</span>,<span style="color:#e6db74">&#39;Mean (per institution)&#39;</span>,<span style="color:#e6db74">&#39;Median (per institution)&#39;</span>]
+)
+
+
+fig <span style="color:#f92672">=</span> go<span style="color:#f92672">.</span>Figure()
+<span style="color:#66d9ef">if</span> selected_metrics <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Doctorate-granting institutions&#39;</span>:
+    fig<span style="color:#f92672">.</span>add_trace(go<span style="color:#f92672">.</span>Scatter(x<span style="color:#f92672">=</span>df_2<span style="color:#f92672">.</span>Year, y<span style="color:#f92672">=</span>df_2[<span style="color:#e6db74">&#39;Doctorate-granting institutions&#39;</span>],
+                    mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lines+markers&#39;</span>,
+                    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Doctorate-granting institutions&#39;</span>))
+<span style="color:#66d9ef">if</span> selected_metrics <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Total&#39;</span>:
+    fig<span style="color:#f92672">.</span>add_trace(go<span style="color:#f92672">.</span>Scatter(x<span style="color:#f92672">=</span>df_2<span style="color:#f92672">.</span>Year, y<span style="color:#f92672">=</span>df_2<span style="color:#f92672">.</span>Total,
+                        mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lines+markers&#39;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Total&#39;</span>))
+<span style="color:#66d9ef">if</span> selected_metrics <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Mean (per institution)&#39;</span>:
+    fig<span style="color:#f92672">.</span>add_trace(go<span style="color:#f92672">.</span>Scatter(x<span style="color:#f92672">=</span>df_2<span style="color:#f92672">.</span>Year, y<span style="color:#f92672">=</span>df_2[<span style="color:#e6db74">&#39;Mean (per institution)&#39;</span>],
+                        mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lines+markers&#39;</span>,
+                        name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Mean (per institution)&#39;</span>))
+
+<span style="color:#66d9ef">if</span> selected_metrics <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Median (per institution)&#39;</span>:
+    fig<span style="color:#f92672">.</span>add_trace(go<span style="color:#f92672">.</span>Scatter(x<span style="color:#f92672">=</span>df_2<span style="color:#f92672">.</span>Year, y<span style="color:#f92672">=</span>df_2[<span style="color:#e6db74">&#39;Median (per institution)&#39;</span>],
+                        mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lines+markers&#39;</span>,
+                        name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Median (per institution)&#39;</span>))
+st<span style="color:#f92672">.</span>plotly_chart(fig, use_container_width<span style="color:#f92672">=</span>True)
+</code></pre></div><p><img src="/images/phd_analysis/piechart.png" alt="image alter text"></p>
+<h4 id="run-the-dashboard">Run the dashboard</h4>
+<p>in order to run the above application, we will go to the directory where your .py file is stored and run the following command</p>
+<pre><code>streamlit run {filename}
+</code></pre><p>The above precedure is required to successfully build a streamlit dashboard.</p>
 
 
 

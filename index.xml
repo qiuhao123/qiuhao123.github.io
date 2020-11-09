@@ -17,7 +17,8 @@
       <pubDate>Fri, 06 Nov 2020 23:10:37 -0500</pubDate>
       
       <guid>https://qiuhao123.github.io/phd_analysis/</guid>
-      <description>PHD data dashboard </description>
+      <description>The objective of this blog is to explore the Phd datase. We would like to build a data dashboard via streamlit package.
+Dataset Data presented in Doctorate Recipients from U.S. Universities: 2017 were collected by the Survey of Earned Doctorates (SED). The Survey collects data on the number and characteristics of individuals receiving research doctoral degrees from U.S. There are total 72 tables within the dataset. Let&amp;rsquo;s talk about streamlit package.</description>
     </item>
     
     <item>
