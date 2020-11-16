@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Insect Image Recognition"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Insect Image Recognition &middot; Qiuhao Jin" />
+  	<meta property="og:site_name" content="Qiuhao Jin" />
+  	<meta property="og:url" content="https://qiuhao123.github.io/insect_image/" />
+    
+    
+        
+            <meta property="og:image" content="/images/cover.png"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-11-13T14:24:48-05:00" />
+
+    
+    
+
+    <title>Insect Image Recognition &middot; Qiuhao Jin</title>
+
+    
+    <meta name="description" content="With the dawn of a new era of A.I., machine learning, and robotics, its time for the machines to perform tasks characteristic of human intelligence.From Automat" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Qiuhao Jin" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <link rel="canonical" href="https://qiuhao123.github.io/insect_image/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://qiuhao123.github.io/images/logo.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://qiuhao123.github.io/images/logo.png",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Insect Image Recognition",
+    "name": "Insect Image Recognition",
+    "wordCount":  1005 ,
+    "timeRequired": "PT5M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://qiuhao123.github.io/insect_image/",
+    "datePublished": "2020-11-13T14:24Z",
+    "dateModified": "2020-11-13T14:24Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qiuhao123.github.io/insect_image/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/ad-analysis/">Ad Analysis</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/personal_website_blog/">Build a personal website with Hugo </a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/contact/">Contact</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/spotify_db_normalization/">Database Normalization</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/euler-project/">Euler-Project</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/home_price/">Home_price</a>
+            </li>
+        
+            
+            <li class="nav-opened nav-current" role="presentation">
+            	<a href="/insect_image/">Insect Image Recognition</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/introduction_to_time_series_forecasting/">Introduction to Time Series Forecasting</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/malaria/">Malaria</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/phd_analysis/">Phd_data_dashboard</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/starwar/">Star War Data Acuisiqtion</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav overlay clearfix">
+
+
+      
+        <a class="blog-logo" href="https://qiuhao123.github.io/"><img src="/images/logo.png" alt="Home" /></a>
+      
+      
+          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+      
+    </nav>
+
+    
+
+
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post ">
+    <header class="post-header">
+      <nav class="breadcrumb">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li><a href="/insect_image/">Insect Image Recognition</a></li>
+              
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </nav>
+
+
+        <h1 class="post-title">Insect Image Recognition</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+
+
+<p>With the dawn of a new era of A.I., machine learning, and robotics, its time for the machines to perform tasks characteristic of human intelligence.From Automated self-driven cars to Boosting augmented reality applications and gaming, from Image and Face Recognition on Social Networks to Its application in various Medical fields, Image Recognition has emerged as a powerful tool and has become a vital for many upcoming inventions.</p>
+<h3 id="introduction">Introduction</h3>
+<p>In this tutorial, we will present two effective methods to build a powerful insect image classifer. The idea is to create a simple, beetles, cockroaches, dragonflies image classifier and then comparing with existing benchmark models.</p>
+<h3 id="collecting-dataset">Collecting Dataset</h3>
+<p>The original <a href="https://www.insectimages.org/index.cfm">dataset</a> is found at the Insect Image websites. There are total 1199 images of beetles, cockroaches and dragonflies.</p>
+<h3 id="image-exploration">Image exploration</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.image <span style="color:#f92672">as</span> mpimg
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+beetle <span style="color:#f92672">=</span> mpimg<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">&#39;train/beetles/5556579.jpg&#39;</span>)
+plt<span style="color:#f92672">.</span>imshow(beetle)
+</code></pre></div><p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/insects/train/beetles/5556579.jpg" alt="5556579"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cockroach <span style="color:#f92672">=</span> mpimg<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">&#39;train/cockroach/1233109.jpg&#39;</span>)
+plt<span style="color:#f92672">.</span>imshow(cockroach)
+</code></pre></div><p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/insects/train/cockroach/1233109.jpg" alt="1233109"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dragonfly <span style="color:#f92672">=</span> mpimg<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">&#39;train/dragonflies/1113001.jpg&#39;</span>)
+plt<span style="color:#f92672">.</span>imshow(dragonfly)
+</code></pre></div><p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/insects/train/dragonflies/1113001.jpg" alt="1113001"></p>
+<h3 id="load-train-and-test-dataset">Load train and test dataset</h3>
+<p>After we download our train and test dataset, the images may not all consist in the exact pixel shapes. Thus, we have to resize each image into (64,64,3)  (image height,imgae width,color channel) shape and stored all images as a numpy array.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_images</span>(folder):
+    <span style="color:#e6db74">&#39;&#39;&#39;load all images in current folder and return as a numpy array
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">    folder: current directory. string
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">    imageArray: array of imgaes. numpy.array
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    images <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(folder):
+        img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(folder, filename))
+        <span style="color:#75715e">#img = ImageOps.grayscale(img)</span>
+        <span style="color:#66d9ef">if</span> img <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None:
+            image_resized <span style="color:#f92672">=</span> img_to_array(img<span style="color:#f92672">.</span>resize((<span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">64</span>)))
+            images<span style="color:#f92672">.</span>append(image_resized)
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array(images)
+</code></pre></div><p>After load all the train and test images, we have 1109 training images and 180 testing images with shape (64,64,3)</p>
+<h3 id="build-convolutional-neural-network">Build Convolutional Neural network</h3>
+<p>This is most important step for our network. It consists of three parts -</p>
+<ol>
+<li>
+<p>Convolution</p>
+</li>
+<li>
+<p>Pooling</p>
+</li>
+<li>
+<p>Flattening</p>
+</li>
+</ol>
+<p>The primary purpose of Convolution is to extract features from the input image. Convolution preserves the spatial relationship between pixels by learning image features using small squares of input data.</p>
+<p>Since every image can be considered as a matrix of pixel values. Consider a 5 x 5 image whose pixel values are only 0 and 1 (note that for a grayscale image, pixel values range from 0 to 255, the green matrix below is a special case where pixel values are only 0 and 1):</p>
+<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/5*5_matrix.png" alt="image alter text"></p>
+<p>Also, consider another 3 x 3 matrix as shown below:</p>
+<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/3*3_matrix.png" alt="image alter text"></p>
+<p>Then, the Convolution of the 5 x 5 image and the 3 x 3 matrix can be computed as shown in the animation in below:</p>
+<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/convolute5*3.gif" alt="image alter text"></p>
+<p>The obtained matrix is also known as the feature map. An additional operation called ReLU is used after every Convolution operation. The next step is of pooling.</p>
+<p>Pooling (also called subsampling or downsampling) reduces the dimensionality of each feature map but retains the most important information. In case of Max Pooling, we define a spatial neighborhood (for example, a 2×2 window) and take the largest element from the rectified feature map within that window. Instead of taking the largest element we could also take the average (Average Pooling) or sum of all elements in that window. In practice, Max Pooling has been shown to work better.</p>
+<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/pooling.png" alt="image alter text"></p>
+<p>After pooling comes flattening. Here the matrix is converted into a linear array so that to input it into the nodes of our neural network.</p>
+<p>Here is the code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ImageModel</span>(input_shape):
+    <span style="color:#75715e"># Define the input placeholder as a tensor with shape input_shape. Think of this as your input image!</span>
+    X_input <span style="color:#f92672">=</span> Input(input_shape)
+    X <span style="color:#f92672">=</span> X_input
+
+    <span style="color:#75715e"># CONV -&gt; BN -&gt; RELU Block applied to X</span>
+    X <span style="color:#f92672">=</span> Conv2D(<span style="color:#ae81ff">32</span>, (<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>), strides <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;conv0&#39;</span>)(X)
+    X <span style="color:#f92672">=</span> BatchNormalization(axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bn0&#39;</span>)(X)
+    X <span style="color:#f92672">=</span> Activation(<span style="color:#e6db74">&#39;relu&#39;</span>)(X)
+
+    <span style="color:#75715e"># MAXPOOL</span>
+    X <span style="color:#f92672">=</span> MaxPooling2D((<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;max_pool1&#39;</span>)(X)
+    
+    <span style="color:#75715e"># CONV -&gt; BN -&gt; RELU Block applied to X</span>
+    X <span style="color:#f92672">=</span> Conv2D(<span style="color:#ae81ff">64</span>, (<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>), strides <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;conv1&#39;</span>)(X)
+    X <span style="color:#f92672">=</span> BatchNormalization(axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bn1&#39;</span>)(X)
+    X <span style="color:#f92672">=</span> Activation(<span style="color:#e6db74">&#39;relu&#39;</span>)(X)
+
+    <span style="color:#75715e"># MAXPOOL</span>
+    X <span style="color:#f92672">=</span> MaxPooling2D((<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;max_pool2&#39;</span>)(X)
+
+    <span style="color:#75715e"># FLATTEN X (means convert it to a vector) + FULLYCONNECTED</span>
+    X <span style="color:#f92672">=</span> Flatten()(X)
+    X <span style="color:#f92672">=</span> Dense(<span style="color:#ae81ff">4</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fc&#39;</span>)(X)
+
+    <span style="color:#75715e"># Create model. This creates your Keras model instance, you&#39;ll use this instance to train/test the model.</span>
+    model <span style="color:#f92672">=</span> Model(inputs <span style="color:#f92672">=</span> X_input, outputs <span style="color:#f92672">=</span> X, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ImageModel&#39;</span>)
+    
+    <span style="color:#66d9ef">return</span> model
+</code></pre></div><p>So now our CNN network looks like this</p>
+<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/insects/cnn.png" alt="image alter text"></p>
+<h3 id="training-the-network">Training the network</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">imageModel<span style="color:#f92672">.</span>fit(x<span style="color:#f92672">=</span>X_train, y<span style="color:#f92672">=</span>y_train, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span>, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>,shuffle<span style="color:#f92672">=</span>True,verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</code></pre></div><p>So, we completed all the steps of construction and its time to train our model.</p>
+<h3 id="testing-the-network">Testing the network</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">preds <span style="color:#f92672">=</span> imageModel<span style="color:#f92672">.</span>evaluate(x<span style="color:#f92672">=</span>X_test, y<span style="color:#f92672">=</span>y_test)
+<span style="color:#66d9ef">print</span>()
+<span style="color:#66d9ef">print</span> (<span style="color:#e6db74">&#34;Loss = &#34;</span> <span style="color:#f92672">+</span> str(preds[<span style="color:#ae81ff">0</span>]))
+<span style="color:#66d9ef">print</span> (<span style="color:#e6db74">&#34;Test Accuracy = &#34;</span> <span style="color:#f92672">+</span> str(preds[<span style="color:#ae81ff">1</span>]))
+</code></pre></div><p>our model has reached accuracy of 80%. Though it is not 100% accurate but it will give correct predictions most of the times. Try adding more convolutional and pooling layers, play with the number of nodes and epochs, and you might get high accuracy result.</p>
+<h3 id="transfer-learning">Transfer Learning</h3>
+<p>we take the pre-trained weights of an already trained model(one that has been trained on millions of images belonging to 1000’s of classes, on several high power GPU’s for several days) and use these already learned features to predict new classes.</p>
+<p>There are several models that have been trained on the image net dataset and have been open sourced.</p>
+<p>For example, VGG-16, VGG-19, Inception-V3 etc. For more details about each of these models, read the official keras documentation <a href="https://keras.io/applications/">here</a>.</p>
+<p>I decide to use VGG-19 in this example, code as following</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">base_model <span style="color:#f92672">=</span> VGG19(
+    weights<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;imagenet&#39;</span>, 
+    include_top<span style="color:#f92672">=</span>False,
+    input_shape<span style="color:#f92672">=</span>X_train<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>:],
+    classes<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+)
+x <span style="color:#f92672">=</span> base_model<span style="color:#f92672">.</span>output
+x <span style="color:#f92672">=</span> GlobalAveragePooling2D()(x)
+x <span style="color:#f92672">=</span> Dense(<span style="color:#ae81ff">1024</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>)(x)
+output <span style="color:#f92672">=</span> Dense(<span style="color:#ae81ff">4</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>)(x)
+model <span style="color:#f92672">=</span> Model(inputs<span style="color:#f92672">=</span>base_model<span style="color:#f92672">.</span>input, outputs<span style="color:#f92672">=</span>output)
+model<span style="color:#f92672">.</span>compile(
+    optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>,
+    loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;categorical_crossentropy&#39;</span>,
+    metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>]
+)
+</code></pre></div><p>The VGG-19 network looks like this</p>
+<p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/homework7/insects/vgg.png" alt="image alter text"></p>
+<h3 id="testing-network-accuracy">Testing network accuracy</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>fit(X_train,y_train, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span>,verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,shuffle<span style="color:#f92672">=</span>True)
+test_loss, test_acc <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>evaluate(X_test,y_test)
+<span style="color:#66d9ef">print</span>(test_acc)
+</code></pre></div><p>Our model has reach 100% accuracy! Even though it has reached high accuracy due to the limited sample of testing images.</p>
+<h3 id="summary">Summary</h3>
+<p>So, we created a simple Image Recognition Classifier. The same concept can applied to a diverse range of objects with a lot of training data and appropriate network. You can change the dataset with the images of your friends and relatives and work upon the network to make a Face Recognition Classifier.</p>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+    </figure>
+    
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://qiuhao123.github.io/">Qiuhao Jin</a></h4>
+  
+  <p>Read <a href="https://qiuhao123.github.io/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Durham, NC, USA</span>
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this page</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Insect%20Image%20Recognition&nbsp;-&nbsp;Qiuhao%20Jin&amp;url=https%3a%2f%2fqiuhao123.github.io%2finsect_image%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiuhao123.github.io%2finsect_image%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fqiuhao123.github.io%2finsect_image%2f&amp;description=Insect%20Image%20Recognition"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fqiuhao123.github.io%2finsect_image%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+<aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/phd_analysis/">
+          <section class="post">
+              <h2>Phd_data_dashboard</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Qiuhao Jin</a> © Qiuhao Jin Duke 2021</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
