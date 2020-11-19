@@ -102,7 +102,7 @@
     },
     "headline": "Credit Risk Modeling",
     "name": "Credit Risk Modeling",
-    "wordCount":  3595 ,
+    "wordCount":  3606 ,
     "timeRequired": "PT17M",
     "inLanguage": {
       "@type": "Language",
@@ -713,12 +713,12 @@ cm_viz<span style="color:#f92672">.</span>show();
 <p><img src="/images/credit_risk/shap_summary_plot.png" alt="shap_summary_plot"></p>
 <h3 id="conclusion">Conclusion</h3>
 <p>In this notebook, We first made sure to understand the data, our task, and the metric. Then, we performed a fairly simple EDA to try and identify relationships, trends, or anomalies that may help our modeling. Along the way, we performed necessary preprocessing steps such as encoding categorical variables, imputing missing values, and scaling features to a range. Then, we constructed new features out of the existing data to see if doing so could help our model.</p>
-<p>Once the data exploration, data preparation, and feature engineering was complete, we implemented a baseline model upon which we hope to improve. Then we built a second slightly more complicated model to beat our first score. We also carried out an experiment to determine the effect of adding the engineering variables.</p>
+<p>Once the data exploration, data preparation, and feature engineering was complete, we select a baseline model upon which we hope to improve. Then we tune the hyperparameters of the model to beat our first score. We also carried out an experiment to determine the effect of adding the engineering variables.</p>
 <p>Interesting findings:</p>
 <ol>
 <li>Current benchmark model has AUC score of 0.69</li>
 <li>The top indicator of user default probability are age of user, user employment length, Their employment type and so on</li>
-<li>Mannually Engineered feature such as credit_income_percent, annuity_income_percent, credit_term, days_employed_percent are not useful to improve the model&rsquo;s AUC score.</li>
+<li>Mannually Engineered feature such as credit_income_percent, annuity_income_percent, credit_term, days_employed_percent are not useful to improve the model&rsquo;s AUC score. Because Some features may contains the same confounding varaible as engineered features,</li>
 </ol>
 
 
