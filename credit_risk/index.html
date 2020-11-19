@@ -569,7 +569,7 @@ X_model_tables <span style="color:#f92672">=</span> feature_selection_model(temp
 </code></pre></div><p><strong>Outlier detection</strong></p>
 <p>One problem we always want to be on the lookout for when doing EDA is anomalies within the data. These may be due to mis-typed numbers, errors in measuring equipment, or they could be valid but extreme measurements. One way is to use the describe method.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;DAYS_EMPLOYED&#39;</span>]<span style="color:#f92672">.</span>describe()
-</code></pre></div><p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/mysite/static/images/credit_risk/employeed_statistic.png" alt="employeed_statistic"></p>
+</code></pre></div><p><img src="/images/credit_risk/employeed_statistic.png" alt="employeed_statistic"></p>
 <p>It is impossible to be emoployeed over 365000 days which is over 1000 years. The anomaly is also consist 15% of our data.</p>
 <h3 id="feature-engineering">Feature engineering</h3>
 <p>Feature engineering refers to a geneal process and can involve both feature construction: adding new features from the existing data, and There are many techniques we can use to both create features and select features.</p>
