@@ -147,7 +147,7 @@
         
             
             <li class="nav-opened" role="presentation">
-            	<a href="/ad-analysis/">Ad Analysis</a>
+            	<a href="/euler-project/">Euler-Project</a>
             </li>
         
             
@@ -162,12 +162,17 @@
         
             
             <li class="nav-opened" role="presentation">
+            	<a href="/credit_risk/">Credit Risk Modeling</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
             	<a href="/spotify_db_normalization/">Database Normalization</a>
             </li>
         
             
             <li class="nav-opened" role="presentation">
-            	<a href="/euler-project/">Euler-Project</a>
+            	<a href="/ad-analysis/">Ad Analysis</a>
             </li>
         
             
@@ -260,6 +265,8 @@
         
         
         
+        
+        
         <li><a href="/insect_image/">Insect Image Recognition</a></li>
               
         
@@ -298,13 +305,13 @@
 <span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 beetle <span style="color:#f92672">=</span> mpimg<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">&#39;train/beetles/5556579.jpg&#39;</span>)
 plt<span style="color:#f92672">.</span>imshow(beetle)
-</code></pre></div><p><img src="/images/insect-image/5556579.jpg" alt="image alter text"></p>
+</code></pre></div><p><img src="/images/insect_image/5556579.jpg" alt="image alter text"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cockroach <span style="color:#f92672">=</span> mpimg<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">&#39;train/cockroach/1233109.jpg&#39;</span>)
 plt<span style="color:#f92672">.</span>imshow(cockroach)
-</code></pre></div><p><img src="/images/insect-image/1233109.jpg" alt="image alter text"></p>
+</code></pre></div><p><img src="/images/insect_image/1233109.jpg" alt="image alter text"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dragonfly <span style="color:#f92672">=</span> mpimg<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">&#39;train/dragonflies/1113001.jpg&#39;</span>)
 plt<span style="color:#f92672">.</span>imshow(dragonfly)
-</code></pre></div><p><img src="/images/insect-image/1113001.jpg" alt="image alter text"></p>
+</code></pre></div><p><img src="/images/insect_image/1113001.jpg" alt="image alter text"></p>
 <h3 id="load-train-and-test-dataset">Load train and test dataset</h3>
 <p>After we download our train and test dataset, the images may not all consist in the exact pixel shapes. Thus, we have to resize each image into (64,64,3)  (image height,imgae width,color channel) shape and stored all images as a numpy array.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_images</span>(folder):
@@ -342,14 +349,14 @@ plt<span style="color:#f92672">.</span>imshow(dragonfly)
 </ol>
 <p>The primary purpose of Convolution is to extract features from the input image. Convolution preserves the spatial relationship between pixels by learning image features using small squares of input data.</p>
 <p>Since every image can be considered as a matrix of pixel values. Consider a 5 x 5 image whose pixel values are only 0 and 1 (note that for a grayscale image, pixel values range from 0 to 255, the green matrix below is a special case where pixel values are only 0 and 1):</p>
-<p><img src="/images/insect-image/5*5_matrix.png" alt="image alter text"></p>
+<p><img src="/images/insect_image/5*5_matrix.png" alt="image alter text"></p>
 <p>Also, consider another 3 x 3 matrix as shown below:</p>
-<p><img src="/images/insect-image/3*3_matrix.png" alt="image alter text"></p>
+<p><img src="/images/insect_image/3*3_matrix.png" alt="image alter text"></p>
 <p>Then, the Convolution of the 5 x 5 image and the 3 x 3 matrix can be computed as shown in the animation in below:</p>
-<p><img src="/images/insect-image/convolute5*3.gif" alt="image alter text"></p>
+<p><img src="/images/insect_image/convolute5*3.gif" alt="image alter text"></p>
 <p>The obtained matrix is also known as the feature map. An additional operation called ReLU is used after every Convolution operation. The next step is of pooling.</p>
 <p>Pooling (also called subsampling or downsampling) reduces the dimensionality of each feature map but retains the most important information. In case of Max Pooling, we define a spatial neighborhood (for example, a 2×2 window) and take the largest element from the rectified feature map within that window. Instead of taking the largest element we could also take the average (Average Pooling) or sum of all elements in that window. In practice, Max Pooling has been shown to work better.</p>
-<p><img src="/images/insect-image/pooling.png" alt="image alter text"></p>
+<p><img src="/images/insect_image/pooling.png" alt="image alter text"></p>
 <p>After pooling comes flattening. Here the matrix is converted into a linear array so that to input it into the nodes of our neural network.</p>
 <p>Here is the code</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ImageModel</span>(input_shape):
@@ -382,7 +389,7 @@ plt<span style="color:#f92672">.</span>imshow(dragonfly)
     
     <span style="color:#66d9ef">return</span> model
 </code></pre></div><p>So now our CNN network looks like this</p>
-<p><img src="/images/insect-image/cnn.png" alt="image alter text"></p>
+<p><img src="/images/insect_image/cnn.png" alt="image alter text"></p>
 <h3 id="training-the-network">Training the network</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">imageModel<span style="color:#f92672">.</span>fit(x<span style="color:#f92672">=</span>X_train, y<span style="color:#f92672">=</span>y_train, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span>, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>,shuffle<span style="color:#f92672">=</span>True,verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
 </code></pre></div><p>So, we completed all the steps of construction and its time to train our model.</p>
@@ -414,7 +421,7 @@ model<span style="color:#f92672">.</span>compile(
     metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>]
 )
 </code></pre></div><p>The VGG-19 network looks like this</p>
-<p><img src="/images/insect-image/vgg.png" alt="image alter text"></p>
+<p><img src="/images/insect_image/vgg.png" alt="image alter text"></p>
 <h3 id="testing-network-accuracy">Testing network accuracy</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>fit(X_train,y_train, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span>,verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,shuffle<span style="color:#f92672">=</span>True)
 test_loss, test_acc <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>evaluate(X_test,y_test)
@@ -508,6 +515,13 @@ test_loss, test_acc <span style="color:#f92672">=</span> model<span style="color
 </main>
 
 <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/credit_risk/">
+          <section class="post">
+              <h2>Credit Risk Modeling</h2>
+              
+          </section>
+      </a>
   
   
       <a class="read-next-story prev" style="no-cover" href="/phd_analysis/">

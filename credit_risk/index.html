@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Credit Risk Modeling"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Credit Risk Modeling &middot; Qiuhao Jin" />
+  	<meta property="og:site_name" content="Qiuhao Jin" />
+  	<meta property="og:url" content="https://qiuhao123.github.io/credit_risk/" />
+    
+    
+        
+            <meta property="og:image" content="/images/cover.png"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-11-18T19:33:05-05:00" />
+
+    
+    
+
+    <title>Credit Risk Modeling &middot; Qiuhao Jin</title>
+
+    
+    <meta name="description" content="Introduction One of the most exciting trends in FinTech innovation is the use of big data to simplify financial decision and provide comprehensive solution to i" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Qiuhao Jin" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <link rel="canonical" href="https://qiuhao123.github.io/credit_risk/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://qiuhao123.github.io/images/logo.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://qiuhao123.github.io/images/logo.png",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Credit Risk Modeling",
+    "name": "Credit Risk Modeling",
+    "wordCount":  3595 ,
+    "timeRequired": "PT17M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://qiuhao123.github.io/credit_risk/",
+    "datePublished": "2020-11-18T19:33Z",
+    "dateModified": "2020-11-18T19:33Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qiuhao123.github.io/credit_risk/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/euler-project/">Euler-Project</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/personal_website_blog/">Build a personal website with Hugo </a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/contact/">Contact</a>
+            </li>
+        
+            
+            <li class="nav-opened nav-current" role="presentation">
+            	<a href="/credit_risk/">Credit Risk Modeling</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/spotify_db_normalization/">Database Normalization</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/ad-analysis/">Ad Analysis</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/home_price/">Home_price</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/insect_image/">Insect Image Recognition</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/introduction_to_time_series_forecasting/">Introduction to Time Series Forecasting</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/malaria/">Malaria</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/phd_analysis/">Phd_data_dashboard</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/starwar/">Star War Data Acuisiqtion</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav overlay clearfix">
+
+
+      
+        <a class="blog-logo" href="https://qiuhao123.github.io/"><img src="/images/logo.png" alt="Home" /></a>
+      
+      
+          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+      
+    </nav>
+
+    
+
+
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post ">
+    <header class="post-header">
+      <nav class="breadcrumb">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li><a href="/credit_risk/">Credit Risk Modeling</a></li>
+              
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </nav>
+
+
+        <h1 class="post-title">Credit Risk Modeling</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+
+
+<h3 id="introduction">Introduction</h3>
+<p>One of the most exciting trends in FinTech innovation is the use of big data to simplify financial decision and provide comprehensive solution to its stakeholders. This is mainly due to large volumes of financial data that is available in recent times. Undoubtedly, one major area of concern in finance that has seen an unprecedented solution from leveraging big data with analytics is Credit Risk Management.</p>
+<p>Credit Risk could simply be defined as the possibility of loss resulting from a borrower’s failure to repay a loan or meet contractual obligations on specified terms. Almost all financial institutions remain vulnerable to credit risk as far as lending forms an integral part of its services to the society. Managing Credit Risk has, therefore, become a top priority in the financial industry as firms need to protect themselves from loss of economic capital and bankruptcy.</p>
+<h3 id="data">Data</h3>
+<p>The data is provided by Home Credit, a service dedicated to provided lines of credit (loans) to the unbanked population. You can retreive the <a href="https://www.kaggle.com/c/home-credit-default-risk">data</a></p>
+<p>There are 7 different sources of data:</p>
+<ul>
+<li>application_train/application_test: the main training and testing data with information about each loan application at Home Credit. Every loan has its own row and is identified by the feature <code>SK_ID_CURR</code>. The training application data comes with the <code>TARGET</code> indicating 0: the loan was repaid or 1: the loan was not repaid.</li>
+<li>bureau: data concerning client&rsquo;s previous credits from other financial institutions. Each previous credit has its own row in bureau, but one loan in the application data can have multiple previous credits.</li>
+<li>bureau_balance: monthly data about the previous credits in bureau. Each row is one month of a previous credit, and a single previous credit can have multiple rows, one for each month of the credit length.</li>
+<li>previous_application: previous applications for loans at Home Credit of clients who have loans in the application data. Each current loan in the application data can have multiple previous loans. Each previous application has one row and is identified by the feature <code>SK_ID_PREV</code>.</li>
+<li>POS_CASH_BALANCE: monthly data about previous point of sale or cash loans clients have had with Home Credit. Each row is one month of a previous point of sale or cash loan, and a single previous loan can have many rows.</li>
+<li>credit_card_balance: monthly data about previous credit cards clients have had with Home Credit. Each row is one month of a credit card balance, and a single credit card can have many rows.</li>
+<li>installments_payment: payment history for previous loans at Home Credit. There is one row for every made payment and one row for every missed payment.</li>
+</ul>
+<h3 id="determine-metric">Determine Metric</h3>
+<p>Since we are trying tio determine the probability of default of a tarnsaction, it is a binary classification problem. There are several metrics that we can choose from</p>
+<ul>
+<li>accuracy</li>
+<li>precision</li>
+<li>Recall</li>
+<li>ROC/AUC</li>
+</ul>
+<p>Accuracy in classification problems is the number of correct predictions made by the model over all kinds predictions made. Accuracy can be calculated as following:</p>
+<p><img src="/images/credit_risk/accuracy.png" alt="image alter text"></p>
+<p>Precision is a measure that tells us what proportion of loans that we diagnosed as going default, actually defaulted. The predicted positives (People predicted as likely to default are TP and FP) and the people actually defaulted are TP.</p>
+<p><img src="/images/credit_risk/precision.png" alt="precision"></p>
+<p>Recall is a measure that tells us what proportion of users that actually defaulted was diagnosed by the algorithm as going to default. The actual positives (People defaulted are TP and FN) and the people diagnosed by the model going to default are TP.</p>
+<p><img src="/images/credit_risk/recall.png" alt="recall"></p>
+<p>ROC It is a chart that visualizes the tradeoff between true positive rate (TPR) and false positive rate (FPR). Basically, for every threshold, we calculate TPR and FPR and plot it on one chart. Of course, the higher TPR and the lower FPR is for each threshold the better and so classifiers that have curves that are more top-left-side are better. n order to get one number that tells us how good our curve is, we can calculate the Area Under the ROC Curve, or ROC AUC score. The more top-left your curve is the higher the area and hence higher ROC AUC score.</p>
+<p>Alternatively,<a href="https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test#Area-under-curve_(AUC)_statistic_for_ROC_curves"> it can be shown</a> that ROC AUC score is equivalent to calculating the rank correlation between predictions and targets. From an interpretation standpoint, it is more useful because it tells us that this metric shows <strong>how good at ranking predictions your model is</strong>. It tells you what is the probability that a randomly chosen positive instance is ranked higher than a randomly chosen negative instance.</p>
+<p>Since we care the ranking prediction which means we would rather people who are actually going to default should have higher likely hood than the people who are less likely to default. We will use AUC as our evaluation metrics.</p>
+<h3 id="import-data">Import data</h3>
+<p>we first import all libraries and read all the files</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> seaborn <span style="color:#f92672">as</span> sns
+<span style="color:#f92672">import</span> missingno <span style="color:#f92672">as</span> mn
+<span style="color:#f92672">import</span> pandas_profiling <span style="color:#f92672">as</span> pp
+<span style="color:#f92672">import</span> warnings
+warnings<span style="color:#f92672">.</span>filterwarnings(<span style="color:#e6db74">&#39;ignore&#39;</span>)
+<span style="color:#f92672">%</span>matplotlib inline
+
+application_train <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;application_train.csv&#39;</span>)
+application_test <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;application_test.csv&#39;</span>)
+</code></pre></div><h3 id="blind-machine-learning">Blind Machine Learning</h3>
+<p>I would first like to feed all numerical feature into a selection of models to see if it is even necessary to perform additional steps to mannually generate additional features.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">blind_ml_scores</span>(X,y,metrics):
+    scaler <span style="color:#f92672">=</span> StandardScaler()
+    x <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span>fit_transform(X)
+    <span style="color:#75715e">#x_test = scaler.transform(x_test)</span>
+    models <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Dummy Classifier&#39;</span>: DummyClassifier(strategy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;prior&#39;</span>),
+            <span style="color:#e6db74">&#39;Logistic Regression&#39;</span> : LogisticRegression(),
+              <span style="color:#e6db74">&#39;Naive Bayes&#39;</span>: BernoulliNB(),
+              <span style="color:#e6db74">&#39;Linear DIscriminant Analysis&#39;</span>: LinearDiscriminantAnalysis(),
+              <span style="color:#e6db74">&#39;Neural Network&#39;</span>: MLPClassifier(),
+              <span style="color:#e6db74">&#39;K Nearest Neighbor&#39;</span>: KNeighborsClassifier(),
+              <span style="color:#e6db74">&#39;Random Forest&#39;</span>:  RandomForestClassifier(),
+              <span style="color:#e6db74">&#39;Support Vector Machine&#39;</span>: SVC(),
+              <span style="color:#e6db74">&#39;Gradient Boosting Tree&#39;</span>: GradientBoostingClassifier()}
+    scores <span style="color:#f92672">=</span> {}
+    <span style="color:#66d9ef">for</span> name, clf <span style="color:#f92672">in</span> models<span style="color:#f92672">.</span>items():
+        kfold <span style="color:#f92672">=</span> StratifiedKFold(n_splits<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,shuffle<span style="color:#f92672">=</span>True,random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+        s <span style="color:#f92672">=</span> cross_val_score(
+            clf, x, y, scoring<span style="color:#f92672">=</span>metrics, cv<span style="color:#f92672">=</span>kfold,
+        )
+        scores[name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span>metrics] <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>mean()
+    <span style="color:#66d9ef">return</span> scores 
+    
+accuracy <span style="color:#f92672">=</span> blind_ml_scores(X,y,<span style="color:#e6db74">&#39;accuracy&#39;</span>)
+f1 <span style="color:#f92672">=</span> blind_ml_scores(X,y,<span style="color:#e6db74">&#39;f1&#39;</span>)
+</code></pre></div><p>F1 score can be calculated as 2 <em>(precision</em>recall)/(precision+recall). One interesting aspect of the result is that the dummy classifier has reached 90% accuracy with 0 f1 score which shows that just looking at accuracy metric is not enough.</p>
+<h3 id="exploratory-analysis">Exploratory analysis</h3>
+<p><strong>categorical Variables</strong></p>
+<p>The target is what we are asked to predict: either a 0 for the loan was repaid on time, or a 1 indicating the client had payment difficulties. We can first examine the number of loans falling into each category.</p>
+<p><img src="/images/credit_risk/target.png" alt="target"></p>
+<p>check if education is a significant indicator of target variable</p>
+<p><img src="/images/credit_risk/education.png" alt="education"></p>
+<p>Most of the default comes from a secondary sepecial degree. Now Let&rsquo;s check the occupation as an indicator.</p>
+<p><img src="/images/credit_risk/occupation.png" alt="occupation"></p>
+<p>Most defaulted loan come from labor force.</p>
+<p>Before we go any further, we need to deal with pesky categorical variables. A machine learning model unfortunately cannot deal with categorical variables (except for some models such as <a href="http://lightgbm.readthedocs.io/en/latest/Features.html">LightGBM</a>). Therefore, we have to find a way to encode (represent) these variables as numbers before handing them off to the model. There are two main ways to carry out this process:</p>
+<ul>
+<li>Label encoding: assign each unique category in a categorical variable with an integer. No new columns are created. An example is shown below</li>
+<li>One-hot encoding: create a new column for each unique category in a categorical variable. Each observation recieves a 1 in the column for its corresponding category and a 0 in all other new columns.</li>
+</ul>
+<p>The problem with label encoding is that it gives the categories an arbitrary ordering. The value assigned to each of the categories is random and does not reflect any inherent aspect of the category. Therefore, when we perform label encoding, the model might use the relative value of the feature to assign weights which is not what we want. If we only have two unique values for a categorical variable (such as Male/Female), then label encoding is fine, but for more than 2 unique categories, one-hot encoding is the safe option.</p>
+<p>In this notebook, we will use Label Encoding for any categorical variables with only 2 categories and One-Hot Encoding for any categorical variables with more than 2 categories. This process may need to change as we get further into the project, but for now, we will see where this gets us.</p>
+<p><strong>Sample Imbalance</strong></p>
+<p>Imbalanced classifications pose a challenge for predictive modeling as most of the machine learning algorithms used for classification were designed around the assumption of an equal number of examples for each class. This results in models that have poor predictive performance, specifically for the minority class. This is a problem because typically, the minority class is more important and therefore the problem is more sensitive to classification errors for the minority class than the majority class.</p>
+<p>These methods are often presented as great ways to balance the dataset before fitting a classifier on it. In a few words, these methods act on the dataset as follows:</p>
+<ul>
+<li>undersampling consists in sampling from the majority class in order to keep only a part of these points</li>
+<li>oversampling consists in replicating some points from the minority class in order to increase its cardinality</li>
+<li>generating synthetic data consists in creating new synthetic points from the minority class (see SMOTE method for example) to increase its cardinality</li>
+</ul>
+<p>At this point, I would like to perform undersampling method since we have plenty samples.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">downsample</span>(df,target_col):
+    count_class_0, count_class_1 <span style="color:#f92672">=</span> df[target_col]<span style="color:#f92672">.</span>value_counts()
+    df_class_1 <span style="color:#f92672">=</span> df[df[target_col] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>]
+    df_class_0 <span style="color:#f92672">=</span> df[df[target_col] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>]
+    
+    df_class_0_under <span style="color:#f92672">=</span> df_class_0<span style="color:#f92672">.</span>sample(count_class_1)
+    df_under <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([df_class_0_under, df_class_1], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,ignore_index<span style="color:#f92672">=</span>True)
+    <span style="color:#66d9ef">return</span> df_under
+</code></pre></div><p><strong>Missing values</strong></p>
+<p>There are normally two ways to solve missing values which is imputation and removing data. We decide to simply allow user to specify a threshold. If the missing rate of a feature passed the threshold, we will drop this feature. However, there are also other methods listed below.</p>
+<p><img src="/images/credit_risk/missing_value.png" alt="missing_value"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>dropna(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;any&#39;</span>,thresh<span style="color:#f92672">=</span>int(<span style="color:#ae81ff">0.7</span><span style="color:#f92672">*</span>len(temp)))
+</code></pre></div><p>In this case, I choose the threshold to be 30%. After data cleaning, our dataset has 49,650 samples and 164 features.</p>
+<h3 id="feature-selection">Feature Selection</h3>
+<p>feature selection: choosing only the most important features or other methods of dimensionality reduction. Since there are 164 features within the dataset, will select the top 20 features with following methods:</p>
+<ul>
+<li>wrapper: search for well-perform features
+<ul>
+<li>RFE</li>
+</ul>
+</li>
+<li>filter: select subset of feature based on their relationship with target variable
+<ul>
+<li>statistical method
+<ol>
+<li>set a variance threshold, if the feature variance is less then the threshold, we will not use it. Other wise keep it. use VarianceThreshold.</li>
+<li>set correlation coefficient threshold, check the correlation coefficient with respect to target variable. less than threshold, we will discard. otherwise keep. use Person correlation</li>
+<li>use chi square test, set a chi square score threshold, select the top k feature with largest chi square statistics. larger chi square statistics means more relavant, use chi2 in sklearn. When two features are independent, the observed count is close to the expected count, thus we will have smaller Chi-Square value. So high Chi-Square value indicates that the hypothesis of independence is incorrect. In simple words, higher the Chi-Square value the feature is more dependent on the response and it can be selected for model training.</li>
+<li>use f test, set f score threshold. use f_classif in sklearn. f test is used to test if there is any difference between the variance of two variables. F Test is a statistical test used to compare between models and check if the difference is significant between the model. F-Test does a hypothesis testing model X and Y where X is a model created by just a constant and Y is the model created by a constant and a feature. The least square errors in both the models are compared and checks if the difference in errors between model X and Y are significant or introduced by chance.F-Test is useful in feature selection as we get to know the significance of each feature in improving the model.</li>
+</ol>
+</li>
+<li>feature importance method
+<ol>
+<li>in sklearn use mutual_info_classif to calculate th mutual information between each feature and target variable, with higher mutual information, higher correlation.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>intrinsic: algorithm that perform automatic feature selection during training
+<ul>
+<li>decision Tree</li>
+<li>L1/L2 regularization</li>
+<li>in scikit learn use selectfrommodel to pick.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">feature_selection_rfe</span>(df,target_col,numFeatures):
+    temp<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>copy()
+    X <span style="color:#f92672">=</span> temp<span style="color:#f92672">.</span>drop(target_col,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>values
+    y <span style="color:#f92672">=</span> temp[target_col]<span style="color:#f92672">.</span>values
+    models <span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;dt&#39;</span>: DecisionTreeClassifier(),
+             <span style="color:#e6db74">&#39;lr&#39;</span>:LogisticRegression(),
+             <span style="color:#e6db74">&#39;nn&#39;</span>:Perceptron(),
+             <span style="color:#e6db74">&#39;rf&#39;</span>:RandomForestClassifier(),
+             <span style="color:#e6db74">&#39;gbm&#39;</span>:GradientBoostingClassifier()
+            }
+    result <span style="color:#f92672">=</span> {}
+    all_features <span style="color:#f92672">=</span> []
+    frequency <span style="color:#f92672">=</span> {}
+    <span style="color:#75715e">#select all top 5 feature based on different model</span>
+    <span style="color:#66d9ef">for</span> name,clf <span style="color:#f92672">in</span> models<span style="color:#f92672">.</span>items():
+        rfe <span style="color:#f92672">=</span> RFE(estimator<span style="color:#f92672">=</span>clf,n_features_to_select<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,step<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        rfe<span style="color:#f92672">.</span>fit(X,y)
+        select_cols <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(X<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]):
+            <span style="color:#66d9ef">if</span> rfe<span style="color:#f92672">.</span>support_[i]:
+                select_cols<span style="color:#f92672">.</span>append(temp<span style="color:#f92672">.</span>columns[i])
+        result[name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; selected features&#39;</span>] <span style="color:#f92672">=</span> select_cols
+        <span style="color:#75715e">#add all selected feature into a single list</span>
+        all_features<span style="color:#f92672">.</span>extend(select_cols)
+    <span style="color:#75715e">#calcualte each selected features frequency.  </span>
+    <span style="color:#66d9ef">for</span> classifier, features <span style="color:#f92672">in</span> result<span style="color:#f92672">.</span>items():
+        <span style="color:#66d9ef">for</span> feature <span style="color:#f92672">in</span> features:
+            frequency[feature] <span style="color:#f92672">=</span> all_features<span style="color:#f92672">.</span>count(feature)
+    <span style="color:#75715e">#select top 5 most appeared features</span>
+    <span style="color:#75715e">#sorted_frequency = sorted(frequency.items(), key=lambda kv: -kv[1])</span>
+    features_sorted <span style="color:#f92672">=</span> heapq<span style="color:#f92672">.</span>nlargest(numFeatures, frequency) 
+    <span style="color:#66d9ef">return</span> sorted_frequency
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">feature_selection_variance</span>(df,target_col,threshold):
+    <span style="color:#e6db74">&#34;&#34;&#34;select the feature based on variance threshold
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">    df: original dataframe. pd.Dataframe
+</span><span style="color:#e6db74">    target_col: target variable. string
+</span><span style="color:#e6db74">    threshold: the variance threshold. between 0 and 1. float
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Return:
+</span><span style="color:#e6db74">    X_new: selected new feature. np.arrray
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    X <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop(target_col,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    thresholder <span style="color:#f92672">=</span> VarianceThreshold(threshold)
+    X_new <span style="color:#f92672">=</span> thresholder<span style="color:#f92672">.</span>fit_transform(X)
+    cols <span style="color:#f92672">=</span> thresholder<span style="color:#f92672">.</span>get_support(indices<span style="color:#f92672">=</span>True)
+    features_df_new <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:,cols]
+    <span style="color:#66d9ef">return</span> X_new
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">feature_selection_correlation</span>(df,target_col,k):
+    high_corr_features <span style="color:#f92672">=</span> list(df<span style="color:#f92672">.</span>corr()[[target_col]]<span style="color:#f92672">.</span>nlargest(k,columns<span style="color:#f92672">=</span>target_col)<span style="color:#f92672">.</span>index)[<span style="color:#ae81ff">1</span>:] <span style="color:#f92672">+</span> target_col
+    <span style="color:#66d9ef">return</span> df[high_corr_features]
+    
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">feature_selection_statistic</span>(df,target_col,numFeatures,method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;chi2&#39;</span>):
+    <span style="color:#e6db74">&#34;&#34;&#34;based on test statistic to determine the features. higher statistics 
+</span><span style="color:#e6db74">                             means higher correlation toward target variable
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    ----------
+</span><span style="color:#e6db74">    df: original dataframe. pd.Dataframe
+</span><span style="color:#e6db74">    target_col: target variable. string
+</span><span style="color:#e6db74">    method: select from &#34;chi2&#34; (chi square test),&#34;f_class_if&#34; (f test), &#34;mutual_info_classif&#34; (mutual information)
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Return:
+</span><span style="color:#e6db74">    X_new: selected new feature. np.arrray
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    X <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop(target_col,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    y <span style="color:#f92672">=</span> df[target_col]
+    selector <span style="color:#f92672">=</span> None
+    <span style="color:#66d9ef">if</span> method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;chi2&#39;</span>:
+        selector <span style="color:#f92672">=</span> SelectKBest(chi2,k<span style="color:#f92672">=</span>numFeatures)
+        X_new <span style="color:#f92672">=</span> selector<span style="color:#f92672">.</span>fit_transform(X,y)
+    <span style="color:#66d9ef">elif</span> method<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;f_class_if&#39;</span>:
+        selector <span style="color:#f92672">=</span> SelectKBest(f_classif,k<span style="color:#f92672">=</span>numFeatures)
+        X_new <span style="color:#f92672">=</span> selector<span style="color:#f92672">.</span>fit_transform(X,y)
+    <span style="color:#66d9ef">elif</span> method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;mutual_info_classif&#39;</span>:
+        selector <span style="color:#f92672">=</span> SelectKBest(mutual_info_classif,k<span style="color:#f92672">=</span>numFeatures)
+        X_new <span style="color:#f92672">=</span> selector<span style="color:#f92672">.</span>fit_transform(X,y)
+    
+    cols <span style="color:#f92672">=</span> selector<span style="color:#f92672">.</span>get_support(indices<span style="color:#f92672">=</span>True) <span style="color:#f92672">+</span> target_col
+    features_df_new <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:,cols]
+    <span style="color:#66d9ef">return</span> features_df_new
+    <span style="color:#75715e">#return X_new</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">feature_selection_model</span>(df,target_col):
+    <span style="color:#e6db74">&#34;&#34;&#34;select features based on L1 based model and tree based model
+</span><span style="color:#e6db74">    Parameter
+</span><span style="color:#e6db74">    ---------
+</span><span style="color:#e6db74">    df: original dataframe. pd.Dataframe
+</span><span style="color:#e6db74">    target_col: target variable. string
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">    Return
+</span><span style="color:#e6db74">    ------
+</span><span style="color:#e6db74">    X_new_table: each model and its corresponding feature selection result. dictionary
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    X <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop(target_col,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    y <span style="color:#f92672">=</span> df[target_col]
+    <span style="color:#75715e">#With SVMs and logistic-regression, the parameter C controls the sparsity: the smaller C the fewer features selected. </span>
+    <span style="color:#75715e">#With Lasso, the higher the alpha parameter, the fewer features selected</span>
+    X_new_table <span style="color:#f92672">=</span> {}
+    models <span style="color:#f92672">=</span> {
+        <span style="color:#75715e">#L1 based feature selection</span>
+        <span style="color:#e6db74">&#39;Logistic_Regression&#39;</span>: LogisticRegression(penalty<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;l1&#39;</span>,C<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>,solver<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;liblinear&#39;</span>),
+        <span style="color:#e6db74">&#39;Linear_SVC&#39;</span> : LinearSVC(penalty<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;l1&#39;</span>,C<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>,dual<span style="color:#f92672">=</span>False),
+        <span style="color:#75715e">#Tree based feature selection</span>
+        <span style="color:#e6db74">&#39;DecisionTree_Classifier&#39;</span>: DecisionTreeClassifier(),
+        <span style="color:#e6db74">&#34;RandomForest_Classifier&#34;</span>: RandomForestClassifier(),
+        <span style="color:#e6db74">&#39;ExtraTree_Classifier&#39;</span>: ExtraTreesClassifier()
+    }
+    <span style="color:#66d9ef">for</span> name, estimator <span style="color:#f92672">in</span> models<span style="color:#f92672">.</span>items():
+        selector <span style="color:#f92672">=</span> SelectFromModel(estimator,threshold<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;median&#39;</span>)
+        X_new <span style="color:#f92672">=</span> selector<span style="color:#f92672">.</span>fit_transform(X,y)
+        cols <span style="color:#f92672">=</span> selector<span style="color:#f92672">.</span>get_support(indices<span style="color:#f92672">=</span>True)
+        features_df_new <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:,cols]
+        X_new_table[name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_X_new&#39;</span>] <span style="color:#f92672">=</span> X_new
+    <span style="color:#66d9ef">return</span> X_new_table
+
+<span style="color:#75715e">#select feature based on variance thrshold</span>
+X_variance_select <span style="color:#f92672">=</span> feature_selection_variance(temp,<span style="color:#e6db74">&#39;TARGET&#39;</span>,<span style="color:#ae81ff">0.2</span>)
+<span style="color:#75715e"># select feature based on correlation threshold</span>
+X_corr_select <span style="color:#f92672">=</span> feature_selection_correlation(temp,<span style="color:#e6db74">&#39;TARGET&#39;</span>,<span style="color:#ae81ff">21</span>)
+<span style="color:#75715e"># select feature based on f score threshold</span>
+X_f_select <span style="color:#f92672">=</span> feature_selection_statistic(temp,<span style="color:#e6db74">&#39;TARGET&#39;</span>,<span style="color:#ae81ff">20</span>,<span style="color:#e6db74">&#39;f_class_if&#39;</span>)
+X_mutual_select <span style="color:#f92672">=</span> feature_selection_statistic(temp,<span style="color:#e6db74">&#39;TARGET&#39;</span>,<span style="color:#ae81ff">20</span>,<span style="color:#e6db74">&#39;mutual_info_classif&#39;</span>)
+<span style="color:#75715e">#select feature based on model built in feature importance</span>
+X_model_tables <span style="color:#f92672">=</span> feature_selection_model(temp,<span style="color:#e6db74">&#34;TARGET&#34;</span>)
+</code></pre></div><p><strong>Outlier detection</strong></p>
+<p>One problem we always want to be on the lookout for when doing EDA is anomalies within the data. These may be due to mis-typed numbers, errors in measuring equipment, or they could be valid but extreme measurements. One way is to use the describe method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;DAYS_EMPLOYED&#39;</span>]<span style="color:#f92672">.</span>describe()
+</code></pre></div><p><img src="/Users/jinq/Desktop/duke/duke-2020-fall/biostats/homework/mysite/static/images/credit_risk/employeed_statistic.png" alt="employeed_statistic"></p>
+<p>It is impossible to be emoployeed over 365000 days which is over 1000 years. The anomaly is also consist 15% of our data.</p>
+<h3 id="feature-engineering">Feature engineering</h3>
+<p>Feature engineering refers to a geneal process and can involve both feature construction: adding new features from the existing data, and There are many techniques we can use to both create features and select features.</p>
+<p>In order to better generate significant indicator, I have attempt to generate the following features:</p>
+<ul>
+<li><code>CREDIT_INCOME_PERCENT</code>: the percentage of the credit amount relative to a client&rsquo;s income</li>
+<li><code>ANNUITY_INCOME_PERCENT</code>: the percentage of the loan annuity relative to a client&rsquo;s income</li>
+<li><code>CREDIT_TERM</code>: the length of the payment in months (since the annuity is the monthly amount due</li>
+<li><code>DAYS_EMPLOYED_PERCENT</code>: the percentage of the days employed relative to the client&rsquo;s age</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">app_train_domain <span style="color:#f92672">=</span> temp<span style="color:#f92672">.</span>copy()
+
+app_train_domain[<span style="color:#e6db74">&#39;CREDIT_INCOME_PERCENT&#39;</span>] <span style="color:#f92672">=</span> app_train_domain[<span style="color:#e6db74">&#39;AMT_CREDIT&#39;</span>] <span style="color:#f92672">/</span> app_train_domain[<span style="color:#e6db74">&#39;AMT_INCOME_TOTAL&#39;</span>]
+app_train_domain[<span style="color:#e6db74">&#39;ANNUITY_INCOME_PERCENT&#39;</span>] <span style="color:#f92672">=</span> app_train_domain[<span style="color:#e6db74">&#39;AMT_ANNUITY&#39;</span>] <span style="color:#f92672">/</span> app_train_domain[<span style="color:#e6db74">&#39;AMT_INCOME_TOTAL&#39;</span>]
+app_train_domain[<span style="color:#e6db74">&#39;CREDIT_TERM&#39;</span>] <span style="color:#f92672">=</span> app_train_domain[<span style="color:#e6db74">&#39;AMT_ANNUITY&#39;</span>] <span style="color:#f92672">/</span> app_train_domain[<span style="color:#e6db74">&#39;AMT_CREDIT&#39;</span>]
+app_train_domain[<span style="color:#e6db74">&#39;DAYS_EMPLOYED_PERCENT&#39;</span>] <span style="color:#f92672">=</span> app_train_domain[<span style="color:#e6db74">&#39;DAYS_EMPLOYED&#39;</span>] <span style="color:#f92672">/</span> app_train_domain[<span style="color:#e6db74">&#39;DAYS_BIRTH&#39;</span>]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">20</span>))
+<span style="color:#75715e"># iterate through the new features</span>
+<span style="color:#66d9ef">for</span> i, feature <span style="color:#f92672">in</span> enumerate([<span style="color:#e6db74">&#39;CREDIT_INCOME_PERCENT&#39;</span>, <span style="color:#e6db74">&#39;ANNUITY_INCOME_PERCENT&#39;</span>, <span style="color:#e6db74">&#39;CREDIT_TERM&#39;</span>, <span style="color:#e6db74">&#39;DAYS_EMPLOYED_PERCENT&#39;</span>]):
+    
+    <span style="color:#75715e"># create a new subplot for each source</span>
+    plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1</span>, i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+    <span style="color:#75715e"># plot repaid loans</span>
+    sns<span style="color:#f92672">.</span>kdeplot(app_train_domain<span style="color:#f92672">.</span>loc[app_train_domain[<span style="color:#e6db74">&#39;TARGET&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>, feature], label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;target == 0&#39;</span>)
+    <span style="color:#75715e"># plot loans that were not repaid</span>
+    sns<span style="color:#f92672">.</span>kdeplot(app_train_domain<span style="color:#f92672">.</span>loc[app_train_domain[<span style="color:#e6db74">&#39;TARGET&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>, feature], label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;target == 1&#39;</span>)
+    
+    <span style="color:#75715e"># Label the plots</span>
+    plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Distribution of </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> by Target Value&#39;</span> <span style="color:#f92672">%</span> feature)
+    plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> feature); plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Density&#39;</span>);
+    
+plt<span style="color:#f92672">.</span>tight_layout(h_pad <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.5</span>)
+plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;feature_engineering.png&#39;</span>)
+</code></pre></div><p><img src="/images/credit_risk/feature_engineering.png" alt="feature_engineering"></p>
+<p>There appears to have no visually obvious cutoff threshold. Perhaps Machine Learning Models can help us out.</p>
+<h3 id="modeling"><strong>Modeling</strong></h3>
+<p>We have selected several models and we will use sklearn package.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> (
+    LogisticRegression,
+)
+<span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> (
+    DecisionTreeClassifier,
+)
+<span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> (
+    KNeighborsClassifier,
+)
+<span style="color:#f92672">from</span> sklearn.naive_bayes <span style="color:#f92672">import</span> (
+    GaussianNB,
+)
+<span style="color:#f92672">from</span> sklearn.svm <span style="color:#f92672">import</span> (
+    SVC,
+)
+<span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> (
+    RandomForestClassifier,
+)
+<span style="color:#f92672">import</span> xgboost
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">models <span style="color:#f92672">=</span> [    
+    DummyClassifier,
+    LogisticRegression,
+    DecisionTreeClassifier,
+    KNeighborsClassifier,
+    GaussianNB,
+    SVC,
+    RandomForestClassifier,
+    xgboost<span style="color:#f92672">.</span>XGBRFClassifier,
+]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> model <span style="color:#f92672">in</span> models:
+    cls <span style="color:#f92672">=</span> model()
+    kfold <span style="color:#f92672">=</span> model_selection<span style="color:#f92672">.</span>KFold(
+        n_splits<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, 
+        shuffle<span style="color:#f92672">=</span>True,
+        random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>,
+    )
+    s <span style="color:#f92672">=</span> model_selection<span style="color:#f92672">.</span>cross_val_score(
+        cls, X, y, scoring<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;roc_auc&#39;</span>, cv<span style="color:#f92672">=</span>kfold,
+    )
+    <span style="color:#66d9ef">print</span>(
+        f<span style="color:#e6db74">&#39;{model.__name__:22} AUC:&#39;</span>
+        f<span style="color:#e6db74">&#39;{s.mean():.3f} STD: {s.std():.2f}&#39;</span>
+    )
+</code></pre></div><p>From the result, the xgboost classifier has the highest AUC score of 0.686. After we have added engineered feature, the AUC score are still 0.686 which does not improve.</p>
+<h3 id="hyparameter-tunning">Hyparameter tunning</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clf_ <span style="color:#f92672">=</span> xgboost<span style="color:#f92672">.</span>XGBRFClassifier()
+params <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;min_child_weight&#39;</span>: [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>],
+    <span style="color:#e6db74">&#39;gamma&#39;</span>: [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>],
+    <span style="color:#e6db74">&#39;colsample_bytree&#39;</span>: [<span style="color:#ae81ff">0.6</span>, <span style="color:#ae81ff">0.8</span>, <span style="color:#ae81ff">1.0</span>],
+    <span style="color:#e6db74">&#39;max_depth&#39;</span>: [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>],
+}
+clf <span style="color:#f92672">=</span> model_selection<span style="color:#f92672">.</span>GridSearchCV(
+    clf_, params, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, 
+)<span style="color:#f92672">.</span>fit(X_train, y_train)
+clf_best <span style="color:#f92672">=</span> clf<span style="color:#f92672">.</span>best_estimators_
+roc_auc_score(
+    y_test, clf_best<span style="color:#f92672">.</span>predict(X_test)
+)
+</code></pre></div><p>After tunning, the xgboost classifier has reached AUC score of 0.694.</p>
+<h3 id="model-evaluation">Model Evaluation</h3>
+<ul>
+<li>
+<p>Confusion Matrix</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> yellowbrick.classifier <span style="color:#f92672">import</span> ConfusionMatrix
+cm_viz <span style="color:#f92672">=</span> ConfusionMatrix(clf, classes<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;non-default&#39;</span>, <span style="color:#e6db74">&#39;default&#39;</span>])
+cm_viz<span style="color:#f92672">.</span>fit(X_train, y_train)
+cm_viz<span style="color:#f92672">.</span>score(X_test, y_test)
+cm_viz<span style="color:#f92672">.</span>show();
+</code></pre></div><p><img src="/images/credit_risk/confusion_matrix.png" alt="confusion_matrix"></p>
+<p>The above result has shown that the classifier did equally bad job prredicting default and non default jobs.</p>
+</li>
+<li>
+<p>ROC curve</p>
+<p><img src="/images/credit_risk/roc.png" alt="roc"></p>
+</li>
+<li>
+<p>Precision-recall curve</p>
+</li>
+</ul>
+<p><img src="/images/credit_risk/precision_recall.png" alt="precision_recall"></p>
+<p>The AUC score is 0.69. Perhaps with additional feature engineering from the dataset, the AUC score may improve.</p>
+<h3 id="model-interpretation">Model Interpretation</h3>
+<p>As a simple method to see which variables are the most relevant, we can look at the feature importances of the random forest. Given the correlations we saw in the exploratory data analysis, we should expect that the most important features are the <code>EXT_SOURCE</code> and the <code>DAYS_BIRTH</code>. We may use these feature importances as a method of dimensionality reduction in future work.</p>
+<p><img src="/images/credit_risk/feature_importance.png" alt="feature_importance"></p>
+<p>As expected, the most important features are those dealing with <code>EXT_SOURCE</code> and <code>DAYS_BIRTH</code>. We see that there are only a handful of features with a significant importance to the model, which suggests we may be able to drop many of the features without a decrease in performance (and we may even see an increase in performance.)</p>
+<p><strong>Shapley Additive exPlanations (SHAP)</strong></p>
+<p>A concept from game theory - Nobel Prize in Economics 2012</p>
+<p>In the ML context, the game is prediction of an instance, each player is a feature, coalitions are subsets of features, and the game payoff is the difference in predicted value for an instance and the mean prediction (i.e. null model with no features used in prediction).</p>
+<p>The Shapley value is given by the formula</p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6fe739cf2e00ee18336b028ada7971d124e63f2b" alt="img"></p>
+<p>Shapley Additive exPlanations. Note that the sum of Shapley values for all features is the same as the difference between the predicted value of the full model (with all features) and the null model (with no features). So the Shapley values provide an <em>additive</em> measure of feature importance. In fact, we have a simple linear model that explains the contributions of each feature.</p>
+<ul>
+<li>Note 1: The prediction is for each instance (observation), so this is a local interpretation. However, we can average over all observations to get a global value.</li>
+<li>Note 2: There are 2𝑛2n possible coalitions of 𝑛n features, so exact calculation of the Shapley values as illustrated is not feasible in practice. See the reference book for details of how calculations are done in practice.</li>
+<li>Note 3: Since Shapley values are additive, we can just add them up over different ML models, making it useful for ensembles.</li>
+<li>Note 4: Strictly, the calculation we show is known as kernelSHAP. There are variants for different algorithms that are faster such as treeSHAP, but the essential concept is the same.</li>
+<li>Note 5: The Shapeley values quantify the contributions of a feature when it is added to a coalition. This measures something different from the permutation feature importance, which assesses the loss in predictive ability when a feature is removed from the feature set.</li>
+</ul>
+<p><strong>shap value summary plot</strong></p>
+<p>This shows the jittered Shapley values (in probability space) for all instances for each feature. An instance to the right of the vertical line (null model) means that the model predicts a higher probability of survival than the null model. If a point is on the right and is red, it means that for that instance, a high value of that feature predicts a higher probability of survival.</p>
+<p>For example, EXT_SOURCE_2 shows that if you have a high value your probability of default is increased. Similarly, lower score predicts lower default probability.</p>
+<p><img src="/images/credit_risk/shap_summary_plot.png" alt="shap_summary_plot"></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this notebook, We first made sure to understand the data, our task, and the metric. Then, we performed a fairly simple EDA to try and identify relationships, trends, or anomalies that may help our modeling. Along the way, we performed necessary preprocessing steps such as encoding categorical variables, imputing missing values, and scaling features to a range. Then, we constructed new features out of the existing data to see if doing so could help our model.</p>
+<p>Once the data exploration, data preparation, and feature engineering was complete, we implemented a baseline model upon which we hope to improve. Then we built a second slightly more complicated model to beat our first score. We also carried out an experiment to determine the effect of adding the engineering variables.</p>
+<p>Interesting findings:</p>
+<ol>
+<li>Current benchmark model has AUC score of 0.69</li>
+<li>The top indicator of user default probability are age of user, user employment length, Their employment type and so on</li>
+<li>Mannually Engineered feature such as credit_income_percent, annuity_income_percent, credit_term, days_employed_percent are not useful to improve the model&rsquo;s AUC score.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+    </figure>
+    
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://qiuhao123.github.io/">Qiuhao Jin</a></h4>
+  
+  <p>Read <a href="https://qiuhao123.github.io/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Durham, NC, USA</span>
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this page</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Credit%20Risk%20Modeling&nbsp;-&nbsp;Qiuhao%20Jin&amp;url=https%3a%2f%2fqiuhao123.github.io%2fcredit_risk%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiuhao123.github.io%2fcredit_risk%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fqiuhao123.github.io%2fcredit_risk%2f&amp;description=Credit%20Risk%20Modeling"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fqiuhao123.github.io%2fcredit_risk%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+<aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/insect_image/">
+          <section class="post">
+              <h2>Insect Image Recognition</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Qiuhao Jin</a> © Qiuhao Jin Duke 2021</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
