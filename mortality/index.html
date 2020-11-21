@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Mortality Prediction with Neural Network"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Mortality Prediction with Neural Network &middot; Qiuhao Jin" />
+  	<meta property="og:site_name" content="Qiuhao Jin" />
+  	<meta property="og:url" content="https://qiuhao123.github.io/mortality/" />
+    
+    
+        
+            <meta property="og:image" content="/images/cover.png"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-11-20T20:40:55-05:00" />
+
+    
+    
+
+    <title>Mortality Prediction with Neural Network &middot; Qiuhao Jin</title>
+
+    
+    <meta name="description" content="Everyday examples of commercial AI applications are ubiquitous in several sectors and are here to make our lives easier.The medical field is also eager to benef" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Qiuhao Jin" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <link rel="canonical" href="https://qiuhao123.github.io/mortality/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://qiuhao123.github.io/images/logo.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://qiuhao123.github.io/images/logo.png",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Mortality Prediction with Neural Network",
+    "name": "Mortality Prediction with Neural Network",
+    "wordCount":  919 ,
+    "timeRequired": "PT5M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://qiuhao123.github.io/mortality/",
+    "datePublished": "2020-11-20T20:40Z",
+    "dateModified": "2020-11-20T20:40Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qiuhao123.github.io/mortality/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <br />
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/home_price/">Home_price</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/personal_website_blog/">Build a personal website with Hugo </a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/contact/">Contact</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/credit_risk/">Credit Risk Modeling</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/spotify_db_normalization/">Database Normalization</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/euler-project/">Euler-Project</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/ad-analysis/">Ad Analysis</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/insect_image/">Insect Image Recognition</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/introduction_to_time_series_forecasting/">Introduction to Time Series Forecasting</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/malaria/">Malaria</a>
+            </li>
+        
+            
+            <li class="nav-opened nav-current" role="presentation">
+            	<a href="/mortality/">Mortality Prediction with Neural Network</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/phd_analysis/">Phd_data_dashboard</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/starwar/">Star War Data Acuisiqtion</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav overlay clearfix">
+
+
+      
+        <a class="blog-logo" href="https://qiuhao123.github.io/"><img src="/images/logo.png" alt="Home" /></a>
+      
+      
+          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+      
+    </nav>
+
+    
+
+
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post ">
+    <header class="post-header">
+      <nav class="breadcrumb">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li><a href="/mortality/">Mortality Prediction with Neural Network</a></li>
+              
+        
+        
+        
+        
+        
+        
+        
+      </nav>
+
+
+        <h1 class="post-title">Mortality Prediction with Neural Network</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+
+
+<p>Everyday examples of commercial AI applications are ubiquitous in several sectors and are here to make our lives easier.The medical field is also eager to benefit from this revolution. Image analysis for automated diagnosing, AI-powered devices to assist surgeries or the ability to predict patient outcomes are some examples of what AI could bring to the table in the upcoming years. Patient Mortality prediction is one of the field that can be benefited from AI approach.</p>
+<h3 id="getting-data">Getting Data</h3>
+<p>After several sleepless, red bull-fueled nights researching about the topic I came across the MIMIC III dataset. This gift of god is an extensive database containing de-identified data aboout patients who stayed within the intensive care units at Beth Israel Deaconess Medical Center, Boston, Massachusetts, between 2001 and 2012. Patient’s vital signs, lab tests results, medical procedures, drugs delivered, transcriptions of medical staff notes and demographics data, are found amongst many other useful features.</p>
+<p>In order to build a machine learning model. The following features were extracted from the database:</p>
+<ul>
+<li><strong>Lab tests</strong>: Blood urea nitrogen, Platelet count, Hematocrit, Potassium, Sodium, Creatinine, Bicarbonate, White blood cells count, Glucose and Albumin.</li>
+<li><strong>Vital signs</strong>: Heart rate, Respiratory rate, Systolic Pressure, Diastolic pressure, Temperature, Oxygen saturation.</li>
+<li><strong>Administrative data</strong>: Admission medical service, Surgery/No Surgery undergone, ICU length of stay, total length of stay, OASIS, SAPS and SOFA severity scores, time under mechanical ventilation.</li>
+<li><strong>Demographic info:</strong> Age, gender, marital status, religion and ethnicity.</li>
+</ul>
+<h3 id="define-goal">Define Goal:</h3>
+<p>Since we are trying to predict the motality of patients. It can be comvert into a binary classification problem. Our main goal will be to predict which group does a patient belong to</p>
+<h3 id="cleaning-and-prepare-data">Cleaning and Prepare Data</h3>
+<p>There are many outliers and imperfections are present in the data. Measuring errors, human mistakes, or just data complexities and imbalances make necessary a preprocessing step in order to feed the data to a model.</p>
+<p>So to make the data usable, outliers outside the 95% percentile were excluded and categorical features with many imbalanced classes were grouped into meaningful group. In addition, all missing value is imputed with MICE method, all categorical feature has been one encoded. Scaling data to the same range can also boost the convergence of the neural network.</p>
+<h3 id="exploratory-analysis">Exploratory analysis</h3>
+<p>Demographic feature exploration</p>
+<p><strong>Religon</strong></p>
+<p><img src="/images/mortality_prediction/religion_count.png" alt="image alter text"></p>
+<p><strong>martial status</strong></p>
+<p><img src="/images/mortality_prediction/marital_status_count.png" alt="image alter text"></p>
+<p><strong>Sex</strong></p>
+<p><img src="/images/mortality_prediction/gender_count.png" alt="image alter text"></p>
+<p><strong>Race</strong></p>
+<p><img src="/images/mortality_prediction/ethnicity.png" alt="image alter text"></p>
+<p><strong>Age</strong></p>
+<p><img src="/images/mortality_prediction/age_histogram.png" alt="image alter text"></p>
+<p>From the above plot we can clearly see that most of the patients are white, male, married and with a mean age of 60. We also have to be careful the imbalnced issue within the dataset.</p>
+<h3 id="basic-neural-network">Basic Neural Network</h3>
+<p>A simple, basic, fully connected neural network with four layers, and four neurons per layer is implemented using Keras.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">train_neural_network</span>(self, X_train, Y_train, X_test, Y_test, params):
+        <span style="color:#66d9ef">print</span>(params);
+        n_layers <span style="color:#f92672">=</span> params[<span style="color:#e6db74">&#39;n_layers&#39;</span>];
+        n_neurons <span style="color:#f92672">=</span> params[<span style="color:#e6db74">&#39;n_neurons&#39;</span>];
+        batch_size <span style="color:#f92672">=</span> params[<span style="color:#e6db74">&#39;batch_size&#39;</span>];
+        epochs <span style="color:#f92672">=</span> params[<span style="color:#e6db74">&#39;epochs&#39;</span>];
+        optimizer <span style="color:#f92672">=</span> params[<span style="color:#e6db74">&#39;optimizer&#39;</span>];
+    
+        model <span style="color:#f92672">=</span> Sequential();
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n_layers):
+            model<span style="color:#f92672">.</span>add(Dense(n_neurons, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">101</span>,)))
+        model<span style="color:#f92672">.</span>add(Dense(<span style="color:#ae81ff">3</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>));
+        model<span style="color:#f92672">.</span>compile(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;binary_crossentropy&#39;</span>,
+                  optimizer<span style="color:#f92672">=</span>optimizer,
+                  metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>, <span style="color:#e6db74">&#39;mse&#39;</span>])
+        model<span style="color:#f92672">.</span>fit(X_train, Y_train,epochs<span style="color:#f92672">=</span>epochs, batch_size<span style="color:#f92672">=</span>batch_size, verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+        <span style="color:#75715e">#Evaluating model</span>
+        Y_pred <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(X_test);
+        Y_train_pred <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>get_dummies(model<span style="color:#f92672">.</span>predict(X_train)<span style="color:#f92672">.</span>argmax(axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>));
+        Y_test_pred <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>get_dummies(Y_pred<span style="color:#f92672">.</span>argmax(axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>));
+        <span style="color:#75715e">#Train and test accuracies</span>
+        train_accuracy <span style="color:#f92672">=</span> accuracy_score(Y_train, Y_train_pred);
+        test_accuracy <span style="color:#f92672">=</span> accuracy_score(Y_test, Y_test_pred);
+        f1_score_model <span style="color:#f92672">=</span> f1_score(Y_test_pred, Y_test, average <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;samples&#39;</span>);
+        loss, accuracy, mse <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>evaluate(X_test, Y_test,verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+        roc_auroc <span style="color:#f92672">=</span> roc_auc_score(Y_test, Y_pred);
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;TRAIN ACCURACY:&#39;</span>,train_accuracy, <span style="color:#e6db74">&#39;TEST ACCURACY:&#39;</span>,test_accuracy,<span style="color:#e6db74">&#39;F1 SCORE:&#39;</span>, f1_score_model,<span style="color:#e6db74">&#39;LOSS:&#39;</span>, loss, <span style="color:#e6db74">&#39;MSE:&#39;</span>,mse, <span style="color:#e6db74">&#39;AUROC:&#39;</span>, roc_auroc);
+        <span style="color:#66d9ef">return</span> model;
+</code></pre></div><p>After training the data, This basic neural network is able to achieve an AUROC score of about 0.65, with accuracy around 0.6. While not an astounding result, it shows that the neural network is able to extract relevant information from the data in order to predict patient mortality.</p>
+<h3 id="network-tunning">Network Tunning</h3>
+<p>the network should be tuned to increase its performance in order to make better predictions. Predictive power is determined by several factors, mostly network parameter tuning. Tuning is performed in an iterative manner, by trying out several configurations until we find an optimal one that maximizes accuracy. The following parameters were tuned:</p>
+<ul>
+<li>Number of hidden layers</li>
+<li>Number of neurons in each layer</li>
+<li>Epoch</li>
+<li>Batch Size</li>
+<li>Optimization algorithm</li>
+</ul>
+<p>Three main tuning strategies can be used to accomplish this task. The most time consuming, <strong>Grid Search</strong>, involves trying out all possible combinations of parameters. This is often unfeasible in complex scenarios, as the combinations may easily exceed 10k, which given a training time of about 5 mins would mean that we need to wait for months to find the optimal parameter configuration</p>
+<p>An alternative to Grid Search is <strong>Random Search</strong>, which tests a predefined number of random configurations, maybe 50 or 100, and picks the best one.</p>
+<p>After 50 iterations and around 3.5h, the optimal parameters are gifted to us: 6 hidden layers, 8 neurons per layer, a batch size of 50, epoch of 25 and Adam algorithm as optimization function.</p>
+<h3 id="network-evaluation">Network Evaluation</h3>
+<p>Using the optimal parameters obtained in the previous step, the network is trained and its performance is evaluated. We get an overall AUROC score of 0.89.</p>
+<p><strong>Precision</strong> and <strong>recall</strong> are evaluation metrics that account for positive and negative predictive power, respectively. Both are combined in the <strong>F1 Score</strong>, which is computed as their harmonic mean. F1 scores achieved support the conclusions obtained by analyzing AUROC scores.</p>
+<p>Since our training accuracy is 65.6% and testing accuracy is 63.2%. The similarities between these two value show that our model does not overfit.</p>
+<h3 id="future-improvement">Future Improvement</h3>
+<p>There are still some improvements can be made to boost the model&rsquo;s performance and achieve better prediction capabilities.</p>
+<p>For example, we can add more features such as the transcription of medical notes from the patient. THese notes often include patient&rsquo;s medical history. Trying out different neural network architecture may also be helpful.</p>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+    </figure>
+    
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://qiuhao123.github.io/" style="background-image: url(/images/logo.png)"><span class="hidden">Qiuhao Jin's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://qiuhao123.github.io/">Qiuhao Jin</a></h4>
+  
+  <p>Read <a href="https://qiuhao123.github.io/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Durham, NC, USA</span>
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this page</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Mortality%20Prediction%20with%20Neural%20Network&nbsp;-&nbsp;Qiuhao%20Jin&amp;url=https%3a%2f%2fqiuhao123.github.io%2fmortality%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiuhao123.github.io%2fmortality%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fqiuhao123.github.io%2fmortality%2f&amp;description=Mortality%20Prediction%20with%20Neural%20Network"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fqiuhao123.github.io%2fmortality%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+<aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/credit_risk/">
+          <section class="post">
+              <h2>Credit Risk Modeling</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Qiuhao Jin</a> © Qiuhao Jin Duke 2021</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
